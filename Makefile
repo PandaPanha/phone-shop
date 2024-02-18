@@ -13,7 +13,6 @@ clean:
 	rm -rf docker/tmp node_modules vendor pnpm-lock.yaml composer.lock
 	docker rmi docker-php-fpm
 setup:
-	make clean
 	make up
 	pnpm install
 	docker run --rm --interactive --tty --volume $(CURDIR):/app composer install
