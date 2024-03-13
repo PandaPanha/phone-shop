@@ -21,7 +21,7 @@ class Product extends Model
         
     ];
     public function product_image(){
-        return $this->hasMany(Product_image::class);
+        return $this->hasMany(ProductImage::class);
     }
     public function invoice(){
         return $this->belongsToMany(Invoice::class);

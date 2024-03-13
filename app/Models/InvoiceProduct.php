@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product_image extends Model
+class InvoiceProduct extends Model
 {
     use HasFactory;
     protected $fillable=[
+        'purchase',
         'product_id',
-        'color_name',
-        'product_img',
+        'invoice_id',
+        'qty',
+        'description',
+        'price',
+        'total_price',
     ];
-    public function product(){
-        return $this->belongsTo(Product::class);
-    }
 }

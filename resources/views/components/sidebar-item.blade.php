@@ -1,4 +1,4 @@
-@props(['propName'])
+@props(['title' => '', 'iconSrc' => '','path' => ''])
 
 <div>
   <a class="
@@ -7,7 +7,7 @@
             text-secondary
 
             align-items-center" 
-            href="/phones"
+            href="{{ $path }}"
           >
             <div class="
               d-flex 
@@ -18,10 +18,10 @@
               <div class="">
                 <img 
                 style="width:30px; height:30px; object-fit:contain;"
-                src="/assets/phone.png" alt="shop">
+                src="{{$imgSrc}}" alt="shop">
               </div>
               <div class="d-none d-sm-block ">
-                Phone
+                {{$title}}
               </div>
             </div>
           </a>
