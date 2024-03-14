@@ -13,7 +13,10 @@
     {{-- sidebar --}}
     <x-side-bar/>
     
-    <div class="w-100">
+    <div
+      style="padding:35px" 
+      class="w-100">
+      <x-navbar/>
       @yield('content')
     </div>
     

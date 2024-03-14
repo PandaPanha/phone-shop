@@ -18,7 +18,7 @@
                       style="width:30px; height:30px; object-fit:contain;"
                       src="{{$src}}" alt="shop">
                     </div>
-                    <div class="d-none d-sm-block ">
+                    <div>
                       {{$title}}
                     </div>
                   </div>

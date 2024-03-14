@@ -1,4 +1,4 @@
-<div class="w-25">
+<div class="w-25 d-none d-sm-block">
     <div class="border-end">
       <div class="col-3 min-vh-100 p-5  ">
         <div class="fw-bold d-flex flex-column gap-5  px-lg-4  ">
@@ -39,7 +39,7 @@
                 [
                 "title" => "Phone",
                 "src" => "/assets/phone.png",
-                "path" => "admin/phones"
+                "path" => "/admin/phones"
                 ],
                 [
                 "title" => "Employee",
