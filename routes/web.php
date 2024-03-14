@@ -17,14 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/phones', function () {
-    return view('phones.phone');
+Route::get('/admin/phones', function () {
+    return view('admin.phones.phone');
 });
 
 Route::get('/about', function(){
     return view('about.about');
 });
 
-Route::get('/dashboard', function(){
-    return view('dashboard.dashboard');
+Route::get('/admin/dashboard', function(){
+    return view('admin.dashboard.dashboard');
 });
