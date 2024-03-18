@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Authenticate;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/login',[Authenticate::class,'login']);
+Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,8 +26,4 @@ Route::get('/admin/phones', function () {
 
 Route::get('/about', function(){
     return view('about.about');
-});
-
-Route::get('/admin/dashboard', function(){
-    return view('admin.dashboard.dashboard');
 });
