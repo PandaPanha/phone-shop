@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg pb-4 ">
-    <div class="container-fluid ">
-      <div class="w-100 d-flex flex-row justify-content-between align-content-center ">
+    <div class="container-fluid">
+      <div class="w-100 d-flex flex-row justify-content-between align-content-center">
         <div>
           <button class="d-sm-none navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,7 +8,7 @@
         </div>
         <div>
           <img
-            style="width:40px; height:40px; object-fit:contain;" 
+            style="width:40px; height:40px; object-fit:contain;"
             src="/assets/user.png" alt="user">
         </div>
       </div>
@@ -53,10 +53,10 @@
               @endforeach
           </div>
         </div>
-      
-      
-      
-      
+
+
+
+
     </div>
-    
+
   </nav>

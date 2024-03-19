@@ -17,8 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin/auth', function () {
+    return view('admin.auth.login');
+});
+
 Route::get('/admin/phones', function () {
     return view('admin.phones.phone');
+});
+
+Route::get('/admin/phones/components', function () {
+    return view('admin.phones.components.add_phone');
 });
 
 Route::get('/about', function(){
