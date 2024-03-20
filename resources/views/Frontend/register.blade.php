@@ -50,6 +50,10 @@
                                 <label for="" class="mt-5">Password:</label>
                                 <input type="password" class="form-control" placeholder="password" name="password" required>
                             </div>
+                            <div>
+                                <label for="" class="mt-5">Confirm Password:</label>
+                                <input type="password" class="form-control" placeholder="Confirm password" name="confirm_password" required>
+                            </div>
                             <div class="mt-5  text-center">
                                 <button class="btn bg-info w-100" type="submit" >register</button>
 

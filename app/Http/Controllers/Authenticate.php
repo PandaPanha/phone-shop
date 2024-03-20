@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -17,13 +18,13 @@ class Authenticate extends Controller
         return view('Frontend.register');
     }
 
-    public function store(Request $request){
+    public function store(RegisterRequest $request){
 
         $user = $request->all();
         User::Create([
-            'name' =>$request->get('name'),
-            'email' =>$request->get('email'),
-            'password' =>$request->get('password'),
+            'name'             =>$request->get('name'),
+            'email'            =>$request->get('email'),
+            'password'         =>$request->get('password'),
 
         ]);
 
