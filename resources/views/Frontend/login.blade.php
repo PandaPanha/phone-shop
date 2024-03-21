@@ -34,8 +34,8 @@
         object-fit: contain;
     }
 </style>
-<body>  
-    
+<body>
+
     <div class="container-fluid bg">
         <div class="row">
           <div class="col-sm-7 ">
@@ -63,10 +63,10 @@
                 <div class="form-group text-center p-b-10" style="margin-bottom: 10px">
                    <div class="row color">
                     <div class="col-xs-6">
-                        <button type="submit" class="btn btn-info mt-5 w-100">Login</button>                 
+                        <button type="submit" class="btn btn-info mt-5">Login</button>
                     </div>
                     <div class="col-xs-6">
-                        <button type="submit" class="btn btn-info mt-5">Forgot Password</button>                 
+                        <button type="submit" class="btn btn-info mt-5">Forgot Password</button>
                     </div>
                    </div>
                 </div>
