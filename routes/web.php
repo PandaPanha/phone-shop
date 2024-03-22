@@ -39,6 +39,6 @@ Route::get('/about', function(){
     return view('about.about');
 });
 
-Route::get('/admin/dashboard', function(){
-    return view('admin.dashboard.dashboard');
-});
+// Route::get('/admin/dashboard', function(){
+//     return view('admin.dashboard.dashboard');
+// });
