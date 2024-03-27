@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\AccountController;
+use App\Http\Controllers\API\AccountController;
 use App\Http\Controllers\API\ApiProductController;
 use App\Http\Controllers\API\ProductImageController;
-use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\InvoiceProductController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\API\InvoiceController;
+use App\Http\Controllers\API\InvoiceProductController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
