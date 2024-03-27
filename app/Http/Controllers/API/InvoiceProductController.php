@@ -20,8 +20,13 @@ class InvoiceProductController extends Controller
     {
         $invoiceProduct = new InvoiceProduct();
 
-        $invoiceProduct-> invoice_date = $request->invoice_date;
-        $invoiceProduct-> total_amount = $request->total_amount;
+        // $invoiceProduct-> purchase      = $request->purchase;
+        $invoiceProduct-> product_id    = $request->product_id;
+        $invoiceProduct-> invoice_id    = $request->invoice_id;
+        $invoiceProduct-> qty           = $request->qty;
+        $invoiceProduct-> description   = $request->description;
+        $invoiceProduct-> price         = $request->price;
+        $invoiceProduct-> total_price   = $request->total_price;
 
         $invoiceProduct->save();
         return response()->json('create success');
@@ -30,10 +35,15 @@ class InvoiceProductController extends Controller
 
     public function update(Request $request)
     {
-        $invoiceProduct = new InvoiceProduct();
+        $invoiceProduct = new InvoiceProduct($request->id);
 
-        $invoiceProduct-> invoice_date = $request->invoice_date;
-        $invoiceProduct-> total_amount = $request->total_amount;
+        // $invoiceProduct-> purchase      = $request->purchase;
+        $invoiceProduct-> product_id    = $request->product_id;
+        $invoiceProduct-> invoice_id    = $request->invoice_id;
+        $invoiceProduct-> qty           = $request->qty;
+        $invoiceProduct-> description   = $request->description;
+        $invoiceProduct-> price         = $request->price;
+        $invoiceProduct-> total_price   = $request->total_price;
 
         $invoiceProduct->update();
         return response()->json('update success');
