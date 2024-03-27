@@ -30,7 +30,7 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
-        $user = new User();
+        $user = User::findorfail($request->id);
 
         $user-> name = $request->name;
         $user-> email = $request->email;

@@ -30,7 +30,7 @@ class AccountController extends Controller
 
     public function update(Request $request)
     {
-        $acc = new Account();
+        $acc = Account::findorfail($request->id);
 
         $acc-> username = $request->username;
         $acc-> password = $request->password;

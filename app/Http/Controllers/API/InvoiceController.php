@@ -30,7 +30,7 @@ class InvoiceController extends Controller
 
     public function update(Request $request)
     {
-        $invoice = new Invoice();
+        $invoice = Invoice::findorfail($request->id);
 
         $invoice-> invoice_date = $request->invoice_date;
         $invoice-> total_amount = $request->total_amount;
