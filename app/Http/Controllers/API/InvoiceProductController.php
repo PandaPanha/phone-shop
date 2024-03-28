@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\InvoiceProduct;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 
@@ -18,17 +19,15 @@ class InvoiceProductController extends Controller
     }
     public function create(Request $request)
     {
-        $invoiceProduct = new InvoiceProduct();
-
-        // $invoiceProduct-> purchase      = $request->purchase;
-        $invoiceProduct-> product_id    = $request->product_id;
-        $invoiceProduct-> invoice_id    = $request->invoice_id;
-        $invoiceProduct-> qty           = $request->qty;
-        $invoiceProduct-> description   = $request->description;
-        $invoiceProduct-> price         = $request->price;
-        $invoiceProduct-> total_price   = $request->total_price;
-
-        $invoiceProduct->save();
+        $product = Product::find($request->product_id);
+        $product->invoices()->sync([
+            $request->invoice_id => [
+                'qty' => $request->qty,
+                'price' => $request->price,
+                'total_price' => $request->total_price,
+                'description' => $request->description,
+            ]
+        ]);
         return response()->json('create success');
 
     }
@@ -37,7 +36,7 @@ class InvoiceProductController extends Controller
     {
         $invoiceProduct = new InvoiceProduct($request->id);
 
-        // $invoiceProduct-> purchase      = $request->purchase;
+        $invoiceProduct-> purchase      = $request->purchase;
         $invoiceProduct-> product_id    = $request->product_id;
         $invoiceProduct-> invoice_id    = $request->invoice_id;
         $invoiceProduct-> qty           = $request->qty;
