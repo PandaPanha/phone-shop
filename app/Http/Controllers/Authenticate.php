@@ -12,6 +12,9 @@ class Authenticate extends Controller
 
         return view('Frontend.login');
     }
+    public function index(){
+        return 'hi';
+    }
 
     public function register(){
 
@@ -29,5 +32,5 @@ class Authenticate extends Controller
         ]);
 
         return redirect()->route('dashboard');
-    } 
+    }
 }

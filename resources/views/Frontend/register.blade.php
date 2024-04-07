@@ -28,9 +28,9 @@
     .error{
         color: red;
     }
-   
+
 </style>
-<body>  
+<body>
     <div class="container-fluid">
         <div class="padding mt-5" style="background:rgba(255, 255, 255, 0.9); border-radius: 4px;max-width: 700px;margin: auto;">
             <div class="row">
@@ -85,6 +85,6 @@
 
         </div>
     </div>
-  
+
 </body>
 </html>

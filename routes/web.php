@@ -19,20 +19,28 @@ Route::get('/register',[Authenticate::class,'register']);
 Route::post('/admin/user/store',[Authenticate::class,'store'])->name('user.store');
 
 Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DashboardController::class,'dashboard'])->name('dashboard');
 
-Route::get('/admin/auth', function () {
-    return view('admin.auth.login');
+// Route::get('/admin/auth', function () {
+//     return view('admin.auth.login');
+// });
+Route::get('/hi',function(){
+    return 'hi';
 });
-
 Route::get('/admin/phones', function () {
     return view('admin.phones.phone');
 });
 
 Route::get('/admin/phones/components', function () {
     return view('admin.phones.components.add_phone');
+});
+
+Route::get('/admin/employee', function () {
+    return view('admin.employee.index');
+});
+
+Route::get('/admin/employee/components', function () {
+    return view('admin.employee.components.add_employee');
 });
 
 Route::get('/about', function(){
