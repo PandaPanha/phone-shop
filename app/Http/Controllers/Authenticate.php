@@ -17,12 +17,12 @@ class Authenticate extends Controller
 {
     public function login(){
 
-        return view('Frontend.login');
+        return view('Frontend.Auth.login');
     }
 
     public function register(){
 
-        return view('Frontend.register');
+        return view('Frontend.Auth.register');
     }
 
     public function store(RegisterRequest $request){
@@ -58,6 +58,7 @@ class Authenticate extends Controller
             return response()->json([
                 'status' => false,
                 'message' => 'Validation error',
+                
             ], 401);
         } catch (AuthenticationException $e) {
             return response()->json([
