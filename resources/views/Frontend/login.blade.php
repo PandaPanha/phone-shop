@@ -42,7 +42,8 @@
             {{-- <img src="/assets/screenlogin.jpg" alt=""> --}}
           </div>
           <div class="col-sm-5 color height">
-            <form action="{{route('dashboard')}}">
+            <form action="{{route('loginA')}}" method="POST">
+                @csrf
                 <div class="title">
                     <h4 class="text-center text-dark p-3 mt-4 color">Login to Shop</h4>
                     <div class="text-center  m-b-20 ">
@@ -63,7 +64,7 @@
                 <div class="form-group text-center p-b-10" style="margin-bottom: 10px">
                    <div class="row color">
                     <div class="col-xs-6">
-                        <button type="submit" class="btn btn-info mt-5">Login</button>
+                        <button type="submit" class="btn btn-info mt-5 w-100">Login</button>
                     </div>
                     <div class="col-xs-6">
                         <button type="submit" class="btn btn-info mt-5">Forgot Password</button>
