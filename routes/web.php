@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Authenticate;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +15,23 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/', function () {
+    return redirect('/login');
+});
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+
+
+});
+
+Route::get('/admin/home',[HomeController::class,'home'])->name('home');
 Route::get('/login',[Authenticate::class,'login'])->name('login');
+Route::post('/login',[Authenticate::class,'loginA'])->name('loginA');
 Route::get('/register',[Authenticate::class,'register']);
 Route::post('/admin/user/store',[Authenticate::class,'store'])->name('user.store');
-
-Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/admin/home',[HomeController::class,'home'])->name('home');
 
 Route::get('/admin/auth', function () {
     return view('admin.auth.login');
@@ -39,6 +49,6 @@ Route::get('/about', function(){
     return view('about.about');
 });
 
-Route::get('/admin/dashboard', function(){
-    return view('admin.dashboard.dashboard');
-});
+// Route::get('/admin/dashboard', function(){
+//     return view('admin.dashboard.dashboard');
+// });
