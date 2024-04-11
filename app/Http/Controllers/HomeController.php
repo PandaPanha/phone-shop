@@ -9,4 +9,16 @@ class HomeController extends Controller
     public function home(){
         return view('Frontend.home');
     }
+    
+    public function menu(){
+        return view('layouts.menu');
+    }
+
+    public function footer(){
+        return view('layouts.footer');
+    }
+
+    public function test(){
+        return view('Frontend.test');
+    }
 }
