@@ -34,6 +34,8 @@ Route::post('/admin/user/store',[Authenticate::class,'store'])->name('user.store
 Route::get('/menu',[HomeController::class,'menu'])->name('menu');
 Route::get('/footer',[HomeController::class,'footer'])->name('footer');
 Route::get('/testhome',[HomeController::class,'test'])->name('test');
+Route::get('/product',[HomeController::class,'product'])->name('product');
+
 
 Route::get('/admin/auth', function () {
     return view('admin.auth.login');

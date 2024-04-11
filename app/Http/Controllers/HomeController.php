@@ -21,4 +21,8 @@ class HomeController extends Controller
     public function test(){
         return view('Frontend.test');
     }
+
+    public function product(){
+        return view('Frontend.selectProduct');
+    }
 }
