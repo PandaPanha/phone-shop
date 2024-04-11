@@ -26,12 +26,11 @@ Route::group(['middleware' => 'auth'], function(){
 
 });
 
-Route::get('/admin/home',[HomeController::class,'home'])->name('home');
+Route::get('/home',[HomeController::class,'home'])->name('home');
 Route::get('/login',[Authenticate::class,'login'])->name('login');
 Route::post('/login',[Authenticate::class,'loginA'])->name('loginA');
 Route::get('/register',[Authenticate::class,'register']);
 Route::post('/admin/user/store',[Authenticate::class,'store'])->name('user.store');
-Route::get('/admin/home',[HomeController::class,'home'])->name('home');
 
 Route::get('/admin/auth', function () {
     return view('admin.auth.login');
