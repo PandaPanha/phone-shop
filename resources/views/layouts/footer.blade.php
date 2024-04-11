@@ -13,7 +13,7 @@
         box-sizing: border-box;
     }
     footer{
-        background-color: #111;
+        background-color: #8b96a5;
         height: 90px;
 
     }
