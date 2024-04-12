@@ -10,69 +10,76 @@
     </div>
   </nav>
   <div class="container-fluid bg-light p-4">
-    <form action="POST">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Phone Name:</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter PhoneName">
-        </div>
+    <form action="{{route('store.phone')}}" method="POST">
+        @csrf
         <br>
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 mt-3">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Storage:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Storage">
+                    <label for="">Product Code:</label>
+                    <input type="text" class="form-control" name="product_code"  placeholder="Enter Battery" required>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 mt-3">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">RAM:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Ram">
+                    <label for="">Storage:</label>
+                    <input type="text" class="form-control" name="storage"  placeholder="Enter Warranty" required>
                 </div>
-            </div>
+            </div> 
         </div>
-        <br>
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 mt-3">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Processor:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Processor">
+                    <label for="">Display:</label>
+                    <input type="text" class="form-control" name="display"  placeholder="Enter Battery" required>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 mt-3">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Camera:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Camera">
+                    <label for="">Ram:</label>
+                    <input type="text" class="form-control" name="ram"  placeholder="Enter Warranty" required>
                 </div>
-            </div>
+            </div> 
         </div>
-        <br>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Picture:</label><br>
-            <input type="file" class="form-control-file border w-100 p-4" id="exampleFormControlFile1">
-        </div>
-        <br>
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 mt-3">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Battery:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Battery">
+                    <label for="">Processor:</label>
+                    <input type="text" class="form-control" name="processor"  placeholder="Enter Battery" required>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 mt-3">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Warranty:</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Warranty">
+                    <label for="">Camera:</label>
+                    <input type="text" class="form-control" name="camera"  placeholder="Enter Warranty" required>
+                </div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Battery:</label>
+                    <input type="text" class="form-control" name="battery"  placeholder="Enter Battery" required>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Warranty:</label>
+                    <input type="text" class="form-control" name="warranty"  placeholder="Enter Warranty" required>
+                </div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Price:</label>
+                    <input type="text" class="form-control" name="price"  placeholder="Enter Battery" required>
                 </div>
             </div>
         </div>
         <br>
-        <div class="row mt-4">
-            <div class="col-lg-10"></div>
-            <div class="col-lg-2 p-3">
-                <div class="btn btn-secondary">Cancel</div>
-                <div class="btn btn-primary">Submit</div>
-            </div>
-        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="{{route('list.phone')}}" class="btn btn-secondary">Back</a>
     </form>
   </div>
 </div>

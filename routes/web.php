@@ -3,6 +3,7 @@
 use App\Http\Controllers\Authenticate;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PhoneController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,11 @@ Route::get('/footer',[HomeController::class,'footer'])->name('footer');
 Route::get('/testhome',[HomeController::class,'test'])->name('test');
 Route::get('/product',[HomeController::class,'product'])->name('product');
 
+//admin routes Product
+Route::get('/admin/phone',[PhoneController::class,'list'])->name('list.phone');
+Route::get('/admin/phone/create',[PhoneController::class,'create'])->name('create.phone');
+Route::post('/admin/phone/store',[PhoneController::class,'store'])->name('store.phone');
+
 
 Route::get('/admin/auth', function () {
     return view('admin.auth.login');
@@ -56,3 +62,5 @@ Route::get('/about', function(){
 // Route::get('/admin/dashboard', function(){
 //     return view('admin.dashboard.dashboard');
 // });
+
+
