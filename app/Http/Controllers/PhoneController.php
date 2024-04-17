@@ -11,7 +11,7 @@ class PhoneController extends Controller
     public function list(){
 
         $products= Product::all();
-        return view('admin.phones.phone',['products'=>$products]);
+        return view('admin.phones.phone',compact('products'));
     }
 
     public function create(){
@@ -36,5 +36,32 @@ class PhoneController extends Controller
 
         return redirect()->route('list.phone');
         
+    }
+
+    public function edit(Product $product){
+
+        return view('admin.phones.components.edit_phone',['product' => $product]);
+    }
+
+    public function update(Request $request,Product $product){
+
+        $product->product_code  = $product->product_code;
+        $product->storage       = $product->storage;
+        $product->display       = $product->display;
+        $product->ram           = $product->ram;
+        $product->processor     = $product->processor;
+        $product->camera        = $product->camera;
+        $product->battery       = $product->battery;
+        $product->warranty      = $product->warranty;
+        $product->price         = $product->price;
+        $product->save();
+
+        return redirect()->route('list.phone',['product'=> $product]);
+
+    }
+
+    public function detail(Request $request, Product $product){
+        $request = Product::get();
+        return view('admin.phones.components.detail_phone',['product'=>$product]);
     }
 }

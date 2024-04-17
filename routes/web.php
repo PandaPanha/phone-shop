@@ -41,6 +41,10 @@ Route::get('/product',[HomeController::class,'product'])->name('product');
 Route::get('/admin/phone',[PhoneController::class,'list'])->name('list.phone');
 Route::get('/admin/phone/create',[PhoneController::class,'create'])->name('create.phone');
 Route::post('/admin/phone/store',[PhoneController::class,'store'])->name('store.phone');
+Route::get('/admin/edit',[PhoneController::class,'edit'])->name('edit.phone');
+Route::put('/admin/update',[PhoneController::class,'update'])->name('update.phone');
+Route::get('/admin/detail',[PhoneController::class,'detail'])->name('detail.phone');
+
 
 
 Route::get('/admin/auth', function () {

@@ -19,12 +19,14 @@
       <th>Ram:</th>
       <th>Camera:</th>
       <th>Battery:</th>
+      <th>Display</th>
       <th>Price:</th>
       <th>Action:</th>
 
     </tr>
-
+   
     @foreach ($products as $product)
+
       <tr>
         <td>{{$product->id}}</td>
         <td>{{$product->product_code}}</td>
@@ -32,11 +34,13 @@
         <td>{{$product->ram}}</td>
         <td>{{$product->camera}}</td>
         <td>{{$product->battery}}</td>
+        <td>{{$product->display}}</td>
         <td>{{$product->price}}</td>
         <td>
           <form action="">
-            <a href="">Edit</a>
-            
+            @csrf
+            <a href="{{route('edit.phone')}}">Edit</a>
+            <a href="{{route('detail.phone')}}">Detail</a>
           </form>
         </td>
       </tr>
