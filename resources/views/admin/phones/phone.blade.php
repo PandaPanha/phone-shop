@@ -14,14 +14,15 @@
 
     <tr class="text-center">
       <th scope="row">ID</th>
-      <th>Product Code:</th>
-      <th>Storage:</th>
-      <th>Ram:</th>
-      <th>Camera:</th>
-      <th>Battery:</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Storage</th>
+      <th>Ram</th>
+      <th>Camera</th>
+      <th>Battery</th>
       <th>Display</th>
-      <th>Price:</th>
-      <th>Action:</th>
+      <th>Price</th>
+      <th>Action</th>
 
     </tr>
    
@@ -30,6 +31,7 @@
       <tr>
         <td>{{$product->id}}</td>
         <td>{{$product->product_code}}</td>
+        <td>{{$product->product_name}}</td>
         <td>{{$product->storage}}</td>
         <td>{{$product->ram}}</td>
         <td>{{$product->camera}}</td>
