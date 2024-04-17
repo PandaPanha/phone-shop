@@ -6,44 +6,50 @@
       <span class="text-secondary navbar-brand mb-0 h1 rounded-2 ">Phone</span>
     </div>
   </nav>
-  <div class="input-group mb-3 shadow-sm ">
-    <button 
-      style="background-color: #F4F4F4"
-      class="btn p-2 shadow-sm text-secondary fw-semibold  " 
-      data-bs-toggle="modal" data-bs-target="#exampleModal"
-      type="button" id="button-addon1">
-      + Add Phone
-    </button>
-    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-  </div>
-  <table class="table table-bordered">
+  <table class="table table-bordered" >
+
+    <div class="w-25">
+      <a href="{{route('create.phone')}}" class="btn btn-success btn-lg w-50 active">Add Phone</a>
+    </div>
+
     <tr class="text-center">
       <th scope="row">ID</th>
-      <td>Name</td>
-      <td>Price & Discount Price</td>
-      <td>Image</td>
-      <td>Action</td>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Storage</th>
+      <th>Ram</th>
+      <th>Camera</th>
+      <th>Battery</th>
+      <th>Display</th>
+      <th>Price</th>
+      <th>Action</th>
+
     </tr>
-    
+   
+    @foreach ($products as $product)
+
+      <tr>
+        <td>{{$product->id}}</td>
+        <td>{{$product->product_code}}</td>
+        <td>{{$product->product_name}}</td>
+        <td>{{$product->storage}}</td>
+        <td>{{$product->ram}}</td>
+        <td>{{$product->camera}}</td>
+        <td>{{$product->battery}}</td>
+        <td>{{$product->display}}</td>
+        <td>{{$product->price}}</td>
+        <td>
+          <form action="">
+            @csrf
+            <a href="{{route('edit.phone')}}">Edit</a>
+            <a href="{{route('detail.phone')}}">Detail</a>
+          </form>
+        </td>
+      </tr>
+
+        
+    @endforeach
   </table>
-  <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+  
 
 @endsection()
