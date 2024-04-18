@@ -23,6 +23,7 @@ class PhoneController extends Controller
         $product = $request->all();
         Product::create([
             'product_code'  => $request->get('product_code'),
+            'product_name'  => $request->get('product_name'),
             'storage'       => $request->get('storage'),
             'display'       => $request->get('display'),
             'ram'           => $request->get('ram'),
@@ -64,5 +65,14 @@ class PhoneController extends Controller
 
         return view('admin.phones.components.detail_phone',compact('product'));
 
+    }
+
+    public function destroy($id){
+        $product = Product::findOrFail($id);
+
+        //Delete the product
+        $product->delete();
+
+        return redirect()->route('list.phone');
     }
 }

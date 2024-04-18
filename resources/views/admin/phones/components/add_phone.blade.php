@@ -17,7 +17,13 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Product Code:</label>
-                    <input type="text" class="form-control" name="product_code"  placeholder="Enter Battery" required>
+                    <input type="text" class="form-control" name="product_code"  placeholder="126" required>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Product Name:</label>
+                    <input type="text" class="form-control" name="product_name"  placeholder="Iphone16" required>
                 </div>
             </div>
             <div class="col-lg-6 mt-3">

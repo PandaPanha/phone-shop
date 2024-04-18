@@ -23,6 +23,12 @@
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
+                    <label for="">Product Name:</label>
+                    <input type="text" class="form-control" name="product_name"  placeholder="Enter Product name" value="{{$product->product_name}}">
+                </div>
+            </div>
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
                     <label for="">Storage:</label>
                     <input type="text" class="form-control" name="storage" value="{{$product->storage}}">
                 </div>
