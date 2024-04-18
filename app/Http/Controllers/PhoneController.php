@@ -67,8 +67,7 @@ class PhoneController extends Controller
 
     }
 
-    public function destroy($id){
-        $product = Product::findOrFail($id);
+    public function delete(Product $product){
 
         //Delete the product
         $product->delete();
