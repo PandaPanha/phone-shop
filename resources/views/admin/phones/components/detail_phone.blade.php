@@ -21,6 +21,12 @@
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
+                    <label for="">Product Name:</label>
+                    {{$product->product_name}}
+                </div>
+            </div>
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
                     <label for="">Storage:</label>
                     {{$product->storage}}
                 </div>

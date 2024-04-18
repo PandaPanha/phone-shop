@@ -47,6 +47,7 @@ class PhoneController extends Controller
     public function update(Request $request,Product $product){
 
         $product->product_code  = $request->product_code;
+        $product->product_name  = $request->product_name;
         $product->storage       = $request->storage;
         $product->display       = $request->display;
         $product->ram           = $request->ram;
