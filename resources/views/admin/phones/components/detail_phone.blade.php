@@ -77,7 +77,6 @@
             </div>
         </div>
         <br>
-        <button type="submit" class="btn btn-success">Submit</button>
         <a href="{{route('list.phone')}}" class="btn btn-secondary">Back</a>
     </form>
   </div>

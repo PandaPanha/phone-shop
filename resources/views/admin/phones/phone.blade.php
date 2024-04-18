@@ -39,8 +39,8 @@
         <td>
           <form action="">
             @csrf
-            <a href="{{route('edit.phone')}}">Edit</a>
-            <a href="{{route('detail.phone')}}">Detail</a>
+            <a href="{{route('edit.phone',['product'=>$product])}}">Edit</a>
+            <a href="{{route('detail.phone',['product'=>$product])}}">Detail</a>
           </form>
         </td>
       </tr>

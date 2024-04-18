@@ -45,23 +45,24 @@ class PhoneController extends Controller
 
     public function update(Request $request,Product $product){
 
-        $product->product_code  = $product->product_code;
-        $product->storage       = $product->storage;
-        $product->display       = $product->display;
-        $product->ram           = $product->ram;
-        $product->processor     = $product->processor;
-        $product->camera        = $product->camera;
-        $product->battery       = $product->battery;
-        $product->warranty      = $product->warranty;
-        $product->price         = $product->price;
+        $product->product_code  = $request->product_code;
+        $product->storage       = $request->storage;
+        $product->display       = $request->display;
+        $product->ram           = $request->ram;
+        $product->processor     = $request->processor;
+        $product->camera        = $request->camera;
+        $product->battery       = $request->battery;
+        $product->warranty      = $request->warranty;
+        $product->price         = $request->price;
         $product->save();
 
-        return redirect()->route('list.phone',['product'=> $product]);
+        return redirect()->route('list.phone',['product'=>$product]);
 
     }
 
-    public function detail(Request $request, Product $product){
-        $request = Product::get();
-        return view('admin.phones.components.detail_phone',['product'=>$product]);
+    public function detail(Product $product){
+
+        return view('admin.phones.components.detail_phone',compact('product'));
+
     }
 }
