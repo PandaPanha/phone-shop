@@ -25,12 +25,6 @@
                     {{$product->product_name}}
                 </div>
             </div>
-            <div class="col-lg-6 mt-3">
-                <div class="form-group">
-                    <label for="">Storage:</label>
-                    {{$product->storage}}
-                </div>
-            </div> 
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -81,6 +75,12 @@
                     {{$product->price}}
                 </div>
             </div>
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Storage:</label>
+                    {{$product->storage}}
+                </div>
+            </div> 
         </div>
         <br>
         <a href="{{route('list.phone')}}" class="btn btn-secondary">Back</a>

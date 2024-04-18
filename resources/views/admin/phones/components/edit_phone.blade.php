@@ -27,12 +27,6 @@
                     <input type="text" class="form-control" name="product_name"  value="{{$product->product_name}}">
                 </div>
             </div>
-            <div class="col-lg-6 mt-3">
-                <div class="form-group">
-                    <label for="">Storage:</label>
-                    <input type="text" class="form-control" name="storage" value="{{$product->storage}}">
-                </div>
-            </div> 
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -83,6 +77,12 @@
                     <input type="text" class="form-control" name="price"  value="{{$product->price}}">
                 </div>
             </div>
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Storage:</label>
+                    <input type="text" class="form-control" name="storage" value="{{$product->storage}}">
+                </div>
+            </div> 
         </div>
         <br>
         <button type="submit" class="btn btn-success">Update</button>
