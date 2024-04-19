@@ -26,12 +26,6 @@
                     <input type="text" class="form-control" name="product_name"  placeholder="Iphone16" required>
                 </div>
             </div>
-            <div class="col-lg-6 mt-3">
-                <div class="form-group">
-                    <label for="">Storage:</label>
-                    <input type="text" class="form-control" name="storage"  placeholder="Enter Warranty" required>
-                </div>
-            </div> 
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -82,6 +76,26 @@
                     <input type="text" class="form-control" name="price"  placeholder="Enter Battery" required>
                 </div>
             </div>
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Storage:</label>
+                    <input type="text" class="form-control" name="storage"  placeholder="Enter Warranty" required>
+                </div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Image:</label>
+                    <input type="file" class="form-control" name="product_img"required>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Color name:</label>
+                    <input type="text" class="form-control" name="color_name"required>
+                </div>
+            </div> 
         </div>
         <div class="col-lg-6 mt-3">
             <div class="form-group">
