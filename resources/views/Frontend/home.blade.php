@@ -77,21 +77,15 @@
 </div>
 <div class="container">
     <h2>Smart Phone</h2><hr>
-    <?php
-        foreach ($product as $item) {
-            ?>
-            <div class="item">
+
+        @foreach ($products as $item) 
+
                 <div class="pic">
-                    <img src="<?php echo $item['img'] ?>" alt="">
+                    <img src="<?php echo $item['img']?>" alt="">
                 </div>
-                <div class="description">
-                    <h3><?php echo $item['des'] ?></h3>
-                    <p><?php echo $item['price'] ?></p>
-                </div>
-            </div>
-            <?php
-        }  
-    ?>
+                <div>{{$item->price}}</div>
+                <div>{{$item->product_code}}</div>
+        @endforeach
 </div>
 <div class="container">
     <h2>Laptop</h2><hr>

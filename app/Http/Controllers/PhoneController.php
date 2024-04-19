@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 
 class PhoneController extends Controller
@@ -21,7 +22,7 @@ class PhoneController extends Controller
 
     public function store(Request $request){
         $product = $request->all();
-        Product::create([
+        $p = Product::create([
             'product_code'  => $request->get('product_code'),
             'product_name'  => $request->get('product_name'),
             'storage'       => $request->get('storage'),
@@ -32,11 +33,25 @@ class PhoneController extends Controller
             'battery'       => $request->get('battery'),
             'warranty'      => $request->get('warranty'),
             'price'         => $request->get('price'),
-
+        ]);
+        ProductImage::create([
+            'product_img' => $request->get('product_img'),
+            'color_name' => $request->get('color_name'),
+            'product_id' => $p->id,
         ]);
 
         return redirect()->route('list.phone');
         
+    }
+
+    public function storeImage($request){
+        if($request->file('product_img')){
+            $file= $request->file('product_img');
+            $filename= date('YmdHi').'.'.$file->getClientOriginalExtension();
+            $file-> move(public_path('storage/app/public/product_img/'), $filename);
+            return $filename;
+            // dd($file);
+        }
     }
 
     public function edit(Product $product){

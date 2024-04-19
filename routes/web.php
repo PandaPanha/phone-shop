@@ -45,6 +45,8 @@ Route::get('/admin/{product}/edit',[PhoneController::class,'edit'])->name('edit.
 Route::put('/admin/{product}/update',[PhoneController::class,'update'])->name('update.phone');
 Route::get('/admin/{product}/detail',[PhoneController::class,'detail'])->name('detail.phone');
 Route::delete('/admin/{product}/delete',[PhoneController::class,'delete'])->name('delete.phone');
+Route::post('/admin/phone/store',[PhoneController::class,'storeImg'])->name('store.phone');
+
 
 
 

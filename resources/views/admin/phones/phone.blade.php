@@ -21,6 +21,7 @@
       <th>Camera</th>
       <th>Battery</th>
       <th>Display</th>
+      <th>Image</th>
       <th>Price</th>
       <th>Action</th>
 
@@ -37,6 +38,7 @@
         <td>{{$product->camera}}</td>
         <td>{{$product->battery}}</td>
         <td>{{$product->display}}</td>
+        <td>{{$product->product_image->first()?->product_img ?? ''}}</td>
         <td>{{$product->price}}</td>
         <td>
           <form method="POST" action="{{route('delete.phone',['product'=>$product])}}">
