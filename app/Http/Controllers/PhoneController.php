@@ -32,8 +32,9 @@ class PhoneController extends Controller
             'battery'       => $request->get('battery'),
             'warranty'      => $request->get('warranty'),
             'price'         => $request->get('price'),
-
         ]);
+
+        
 
         return redirect()->route('list.phone');
         

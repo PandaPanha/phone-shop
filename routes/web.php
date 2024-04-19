@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 });
 
-Route::get('/home',[HomeController::class,'home'])->name('home');
+Route::get('/home',[HomeController::class,'listProducts'])->name('home.list');
 Route::get('/login',[Authenticate::class,'login'])->name('login');
 Route::post('/login',[Authenticate::class,'loginA'])->name('loginA');
 Route::get('/register',[Authenticate::class,'register']);

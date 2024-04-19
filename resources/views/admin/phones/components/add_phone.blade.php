@@ -83,6 +83,17 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-6 mt-3">
+            <div class="form-group">
+                <label for="">Color:</label>
+                <input type="text" class="form-control" name="color_name"  placeholder="Enter Battery" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" type="file" id="formFile">
+          </div>
+
         <br>
         <button type="submit" class="btn btn-success">Submit</button>
         <a href="{{route('list.phone')}}" class="btn btn-secondary">Back</a>

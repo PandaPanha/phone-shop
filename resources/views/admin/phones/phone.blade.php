@@ -42,7 +42,7 @@
           <form action="">
             @csrf
             <a href="{{route('edit.phone')}}">Edit</a>
-            <a href="{{route('detail.phone')}}">Detail</a>
+            <a href="{{route('detail.phone')}}">Delete</a>
           </form>
         </td>
       </tr>
