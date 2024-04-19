@@ -16,37 +16,48 @@
       <th scope="row">ID</th>
       <th>Code</th>
       <th>Name</th>
-      <th>Storage</th>
-      <th>Ram</th>
-      <th>Camera</th>
-      <th>Battery</th>
-      <th>Display</th>
-      <th>Image</th>
       <th>Price</th>
+      <th>Image</th>
       <th>Action</th>
 
     </tr>
    
     @foreach ($products as $product)
 
-      <tr>
+      <tr class="text-center">
         <td>{{$product->id}}</td>
         <td>{{$product->product_code}}</td>
-        <td>{{$product->product_name}}</td>
-        <td>{{$product->storage}}</td>
-        <td>{{$product->ram}}</td>
-        <td>{{$product->camera}}</td>
-        <td>{{$product->battery}}</td>
-        <td>{{$product->display}}</td>
-        <td>{{$product->product_image->first()?->product_img ?? ''}}</td>
-        <td>{{$product->price}}</td>
+        <td >
+          {{$product->product_name}}
+        </td>
+        <td >
+          ${{$product->price}}
+        </td>
+        <td>
+          @foreach ($product_imgs as $img)
+                        @if ($product->id == $img->product_id )
+                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="100px" height="120px">
+                        @endif
+          @endforeach
+        </td>
+        
         <td>
           <form method="POST" action="{{route('delete.phone',['product'=>$product])}}">
             @csrf
             @method('DELETE')
-            <a href="{{route('edit.phone',['product'=>$product])}}">Edit</a>
-            <a href="{{route('detail.phone',['product'=>$product])}}">Detail</a>
-            <button class="btn btn-block">Delete</button>
+            <div class="d-flex justify-content-center align-items-center">
+              <a 
+                href="{{route('edit.phone',['product'=>$product])}}"
+                class="text-secondary text-decoration-none "
+              >
+                <img src="/assets/edit.svg"/>
+                Edit
+              </a>
+            <button class="btn btn-block text-secondary">
+              <img src="/assets/delete.svg"/>
+              Delete
+            </button>
+            </div>
           </form>
         </td>
       </tr>
