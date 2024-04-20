@@ -1,26 +1,26 @@
-<div class="w-25 d-none d-sm-block">
+<div class="d-none d-sm-block">
     <div class="border-end">
-      <div class="col-3 min-vh-100 p-5  ">
+      <div class="col-3 min-vh-100 p-3">
         <div class="fw-bold d-flex flex-column gap-5  px-lg-4  ">
           <a class="
-            d-flex 
-            text-decoration-none 
+            d-flex
+            text-decoration-none
             text-secondary
-            align-items-center 
+            align-items-center
             mb-3
             fs-3
-            " 
-            href="#"
+            "
+            href="http://127.0.0.1:8000/admin/dashboard"
           >
             <div class="
-              d-flex 
+              d-flex
               justify-content-center
               align-items-center
               gap-2
             ">
-              <div class="d-flex justify-content-center align-items-center 
+              <div class="d-flex justify-content-center align-items-center
               bg-secondary rounded-3 p-2">
-                <img 
+                <img
                 style="width:20px; height:20px"
                 src="/assets/shop.png" alt="shop">
               </div>

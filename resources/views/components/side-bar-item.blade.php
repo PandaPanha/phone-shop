@@ -18,7 +18,7 @@
                       style="width:30px; height:30px; object-fit:contain;"
                       src="{{$src}}" alt="shop">
                     </div>
-                    <div>
+                    <div style="{{$title=="Dashboard" ? 'color:#FFC029' : 'color:#6C757D'}}">
                       {{$title}}
                     </div>
                   </div>

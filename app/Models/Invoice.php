@@ -12,7 +12,7 @@ class Invoice extends Model
         'invoice_date',
         'total_amount',
     ];
-    public function product(){
+    public function products(){
         return $this->belongsToMany(Product::class);
     }
 }
