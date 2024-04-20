@@ -15,6 +15,12 @@ class PhoneController extends Controller
         $product_imgs = ProductImage::all();
         return view('admin.phones.phone',['products' => $products, 'product_imgs' => $product_imgs]);
     }
+ 
+    public function showDetail($id){
+        $product = Product::where('id', $id)->first();
+        $productImg = ProductImage::where('product_id', $product->id)->first();
+        return view('Frontend.product.product_detail', ['product' => $product, 'productImg' => $productImg]);
+    }
 
     public function create(){
 
@@ -85,7 +91,7 @@ class PhoneController extends Controller
             $productImg->update();
         }
 
-        return redirect()->route('list.phone',['product'=>$product, 'productImg'=>$productImg]);
+        return redirect()->route('list.phone');
     }
 
     public function detail(Product $product){
