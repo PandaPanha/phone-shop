@@ -75,22 +75,25 @@
         <img src="/assets/1.jpg"  alt="...">
     </div>
 </div>
-<div class="container">
-    <h2>Smart Phone</h2><hr>
-
+<h2 class="container">Smart Phone</h2>
+<hr>
+<div class="container d-flex  gap-4 ">
+       
         @foreach ($products as $item) 
-                <div class="pic">
-                    @foreach ($product_imgs as $img)
-                        @if ($item->id == $img->product_id )
-                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="280px" height="300px">
-                        <div>{{$img->product_img}}</div>
-                        @endif
-                    @endforeach
-                    
+        <a href="{{route('home.productDetail', ['id'=>$item->id])}}" class=" text-decoration-none ">
+            <div class="card" style="width: 13rem;">
+                @foreach ($product_imgs as $img)
+                    @if ($item->id == $img->product_id )
+                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="200px" height="200px">
+                    @endif
+                @endforeach
+                <div class="card-body">
+                  <h5 class="card-title">{{$item->price}}</h5>
+                  <p class="card-text">{{$item->product_name}}</p>
                 </div>
-                <div>id {{$item->id}}</div>
-                <div>{{$item->price}}</div>
-                <div>{{$item->product_code}}</div>
+            </div>
+        </a>
+        
         @endforeach
 </div>
 <div class="container">
