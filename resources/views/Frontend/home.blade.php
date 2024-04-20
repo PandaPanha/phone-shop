@@ -79,10 +79,16 @@
     <h2>Smart Phone</h2><hr>
 
         @foreach ($products as $item) 
-
                 <div class="pic">
-                    <img src="<?php echo $item['img']?>" alt="">
+                    @foreach ($product_imgs as $img)
+                        @if ($item->id == $img->product_id )
+                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="280px" height="300px">
+                        <div>{{$img->product_img}}</div>
+                        @endif
+                    @endforeach
+                    
                 </div>
+                <div>id {{$item->id}}</div>
                 <div>{{$item->price}}</div>
                 <div>{{$item->product_code}}</div>
         @endforeach

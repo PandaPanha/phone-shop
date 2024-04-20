@@ -10,9 +10,9 @@
     </div>
   </nav>
   <div class="container-fluid bg-light p-4">
-    <form action="{{route('update.phone',['product'=>$product])}}" method="GET">
+    <form action="{{route('update.phone',['id'=>$product->id])}}" method="POST">
         @csrf
-        @method('POST')
+        @method('PUT')
         <br>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -81,6 +81,20 @@
                 <div class="form-group">
                     <label for="">Storage:</label>
                     <input type="text" class="form-control" name="storage" value="{{$product->storage}}">
+                </div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Image:</label>
+                    <input type="file" class="form-control" name="product_img" value="c:/{{$productImg->product_img}}">
+                </div>
+            </div>
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Color name:</label>
+                    <input type="text" class="form-control" name="color_name" value="{{$productImg->color_name}}" required >
                 </div>
             </div> 
         </div>

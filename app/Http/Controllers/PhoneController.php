@@ -12,7 +12,8 @@ class PhoneController extends Controller
     public function list(){
 
         $products= Product::all();
-        return view('admin.phones.phone',compact('products'));
+        $product_imgs = ProductImage::all();
+        return view('admin.phones.phone',['products' => $products, 'product_imgs' => $product_imgs]);
     }
 
     public function create(){
@@ -40,6 +41,8 @@ class PhoneController extends Controller
             'product_id' => $p->id,
         ]);
 
+        
+
         return redirect()->route('list.phone');
         
     }
@@ -55,12 +58,13 @@ class PhoneController extends Controller
     }
 
     public function edit(Product $product){
-
-        return view('admin.phones.components.edit_phone',['product' => $product]);
+        $productImg = ProductImage::where('product_id', $product->id)->first();
+        return view('admin.phones.components.edit_phone',['product' => $product, 'productImg' => $productImg]);
     }
 
-    public function update(Request $request,Product $product){
+    public function update(Request $request, $id){
 
+        $product = Product::where('id', $id)->first();
         $product->product_code  = $request->product_code;
         $product->product_name  = $request->product_name;
         $product->storage       = $request->storage;
@@ -71,10 +75,17 @@ class PhoneController extends Controller
         $product->battery       = $request->battery;
         $product->warranty      = $request->warranty;
         $product->price         = $request->price;
-        $product->save();
 
-        return redirect()->route('list.phone',['product'=>$product]);
+        if($product->update()){
+            $productImg = ProductImage::where('product_id', $id)->first();
+            $productImg->color_name = $request->color_name;
+            if($request->product_img){
+                $productImg->product_img = $request->product_img;
+            }
+            $productImg->update();
+        }
 
+        return redirect()->route('list.phone',['product'=>$product, 'productImg'=>$productImg]);
     }
 
     public function detail(Product $product){

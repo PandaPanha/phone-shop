@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 });
 
-Route::get('/home',[HomeController::class,'home'])->name('home');
+Route::get('/home',[HomeController::class,'listProducts'])->name('home.list');
 Route::get('/login',[Authenticate::class,'login'])->name('login');
 Route::post('/login',[Authenticate::class,'loginA'])->name('loginA');
 Route::get('/register',[Authenticate::class,'register']);
@@ -41,8 +41,8 @@ Route::get('/product',[HomeController::class,'product'])->name('product');
 Route::get('/admin/phone',[PhoneController::class,'list'])->name('list.phone');
 Route::get('/admin/phone/create',[PhoneController::class,'create'])->name('create.phone');
 Route::post('/admin/phone/store',[PhoneController::class,'store'])->name('store.phone');
-Route::get('/admin/{product}/edit',[PhoneController::class,'edit'])->name('edit.phone');
-Route::put('/admin/{product}/update',[PhoneController::class,'update'])->name('update.phone');
+Route::get('/admin/edit/{product}',[PhoneController::class,'edit'])->name('edit.phone');
+Route::put('/admin/update/{id}',[PhoneController::class,'update'])->name('update.phone');
 Route::get('/admin/{product}/detail',[PhoneController::class,'detail'])->name('detail.phone');
 Route::delete('/admin/{product}/delete',[PhoneController::class,'delete'])->name('delete.phone');
 
