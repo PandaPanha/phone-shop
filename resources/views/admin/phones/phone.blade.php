@@ -6,18 +6,67 @@
       <span class="text-secondary navbar-brand mb-0 h1 rounded-2 ">Phone</span>
     </div>
   </nav>
-  <div class="w-25">
-    <a href="http://127.0.0.1:8000/admin/phones/components" class="btn btn-success btn-lg w-50 active" role="button" aria-pressed="true">Add Phone</a>
-  </div>
-  <table class="table table-bordered">
+  <table class="table table-bordered" >
+
+    <div class="w-25">
+      <a href="{{route('create.phone')}}" class="btn btn-success btn-lg w-50 active">Add Phone</a>
+    </div>
+
     <tr class="text-center">
       <th scope="row">ID</th>
-      <td>Name</td>
-      <td>Price & Discount Price</td>
-      <td>Image</td>
-      <td>Action</td>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Action</th>
+
     </tr>
+
+    {{-- @foreach ($products as $product) --}}
+
+      <tr class="text-center">
+        {{-- <td>{{$product->id}}</td>
+        <td>{{$product->product_code}}</td>
+        <td >
+          {{$product->product_name}}
+        </td>
+        <td >
+          ${{$product->price}}
+        </td>
+        <td>
+          @foreach ($product_imgs as $img)
+                        @if ($product->id == $img->product_id )
+                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="100px" height="120px">
+                        @endif
+          @endforeach
+        </td> --}}
+
+        <td>
+          {{-- <form method="POST" action="{{route('delete.phone',['product'=>$product])}}"> --}}
+          <form method="POST" action="">
+            @csrf
+            @method('DELETE')
+            <div class="d-flex justify-content-center align-items-center">
+              <a
+                {{-- href="{{route('edit.phone',['product'=>$product])}}" --}}
+                href=""
+                class="text-secondary text-decoration-none "
+              >
+                <img src="/assets/edit.svg"/>
+                Edit
+              </a>
+            <button class="btn btn-block text-secondary">
+              <img src="/assets/delete.svg"/>
+              Delete
+            </button>
+            </div>
+          </form>
+        </td>
+      </tr>
+
+
+    {{-- @endforeach --}}
   </table>
-</div>
+
 
 @endsection()

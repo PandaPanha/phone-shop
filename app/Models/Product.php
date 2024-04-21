@@ -10,6 +10,7 @@ class Product extends Model
     use HasFactory;
     protected $fillable=[
         'product_code',
+        'product_name',
         'battery',
         'storage',
         'display',
@@ -18,7 +19,7 @@ class Product extends Model
         'camera',
         'warranty',
         'price',
-        
+
     ];
     public function product_image(){
         return $this->hasMany(ProductImage::class);

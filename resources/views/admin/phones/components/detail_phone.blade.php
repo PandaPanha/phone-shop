@@ -10,20 +10,19 @@
     </div>
   </nav>
   <div class="container-fluid bg-light p-4">
-    <form action="{{route('store.phone')}}" method="POST">
-        @csrf
+    <form action="">
         <br>
         <div class="row">
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Product Code:</label>
-                    <input type="text" class="form-control" name="product_code"  placeholder="126" required>
+                    {{$product->product_code}}
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Product Name:</label>
-                    <input type="text" class="form-control" name="product_name"  placeholder="Iphone16" required>
+                    {{$product->product_name}}
                 </div>
             </div>
         </div>
@@ -31,75 +30,59 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Display:</label>
-                    <input type="text" class="form-control" name="display"  placeholder="Enter Battery" required>
+                    {{$product->display}}
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Ram:</label>
-                    <input type="text" class="form-control" name="ram"  placeholder="Enter Warranty" required>
+                    {{$product->ram}}
                 </div>
-            </div>
+            </div> 
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Processor:</label>
-                    <input type="text" class="form-control" name="processor"  placeholder="Enter Battery" required>
+                    {{$product->processor}}
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Camera:</label>
-                    <input type="text" class="form-control" name="camera"  placeholder="Enter Warranty" required>
+                    {{$product->camera}}
                 </div>
-            </div>
+            </div> 
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Battery:</label>
-                    <input type="text" class="form-control" name="battery"  placeholder="Enter Battery" required>
+                    {{$product->battery}}
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Warranty:</label>
-                    <input type="text" class="form-control" name="warranty"  placeholder="Enter Warranty" required>
+                    {{$product->warranty}}
                 </div>
-            </div>
+            </div> 
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Price:</label>
-                    <input type="text" class="form-control" name="price"  placeholder="Enter Battery" required>
+                    {{$product->price}}
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Storage:</label>
-                    <input type="text" class="form-control" name="storage"  placeholder="Enter Warranty" required>
+                    {{$product->storage}}
                 </div>
-            </div>
+            </div> 
         </div>
-        <div class="row">
-            <div class="col-lg-6 mt-3">
-                <div class="form-group">
-                    <label for="">Image:</label>
-                    <input type="file" class="form-control" name="product_img"required>
-                </div>
-            </div>
-            <div class="col-lg-6 mt-3">
-                <div class="form-group">
-                    <label for="">Color name:</label>
-                    <input type="text" class="form-control" name="color_name"required>
-                </div>
-            </div>
-        </div>
-
         <br>
-        <button type="submit" class="btn btn-success">Submit</button>
         <a href="{{route('list.phone')}}" class="btn btn-secondary">Back</a>
     </form>
   </div>
