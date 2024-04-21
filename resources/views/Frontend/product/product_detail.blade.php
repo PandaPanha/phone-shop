@@ -1,354 +1,96 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Product Card/Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-        crossorigin="anonymous" />
-</head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@extends('layouts.menu')
+@section('content')
 
-    * {
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-        font-family: 'Open Sans', sans-serif;
-    }
-
-    body {
-        line-height: 1.5;
-    }
-
-    .card-wrapper {
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
-    img {
-        width: 100%;
-        display: block;
-    }
-
-    .img-display {
-        overflow: hidden;
-    }
-
-    .img-showcase {
-        display: flex;
-        width: 100%;
-        transition: all 0.5s ease;
-    }
-
-    .img-showcase img {
-        min-width: 100%;
-    }
-
-    .img-select {
-        display: flex;
-    }
-
-    .img-item {
-        margin: 0.3rem;
-    }
-
-    .img-item:nth-child(1),
-    .img-item:nth-child(2),
-    .img-item:nth-child(3) {
-        margin-right: 0;
-    }
-
-    .img-item:hover {
-        opacity: 0.8;
-    }
-
-    .product-content {
-        padding: 2rem 1rem;
-    }
-
-    .product-title {
-        font-size: 3rem;
-        text-transform: capitalize;
-        font-weight: 700;
-        position: relative;
-        color: #12263a;
-        margin: 1rem 0;
-    }
-
-    .product-title::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 4px;
-        width: 80px;
-        background: #12263a;
-    }
-
-    .product-link {
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 400;
-        font-size: 0.9rem;
-        display: inline-block;
-        margin-bottom: 0.5rem;
-        background: #256eff;
-        color: #fff;
-        padding: 0 0.3rem;
-        transition: all 0.5s ease;
-    }
-
-    .product-link:hover {
-        opacity: 0.9;
-    }
-
-    .product-rating {
-        color: #ffc107;
-    }
-
-    .product-rating span {
-        font-weight: 600;
-        color: #252525;
-    }
-
-    .product-price {
-        margin: 1rem 0;
-        font-size: 1rem;
-        font-weight: 700;
-    }
-
-    .product-price span {
-        font-weight: 400;
-    }
-
-    .last-price span {
-        color: #f64749;
-        text-decoration: line-through;
-    }
-
-    .new-price span {
-        color: #256eff;
-    }
-
-    .product-detail h2 {
-        text-transform: capitalize;
-        color: #12263a;
-        padding-bottom: 0.6rem;
-    }
-
-    .product-detail p {
-        font-size: 0.9rem;
-        padding: 0.3rem;
-        opacity: 0.8;
-    }
-
-    .product-detail ul {
-        margin: 1rem 0;
-        font-size: 0.9rem;
-    }
-
-    .product-detail ul li {
-        margin: 0;
-        list-style: none;
-        background: url(Phones_images/checked.png) left center no-repeat;
-        background-size: 18px;
-        padding-left: 1.7rem;
-        margin: 0.4rem 0;
-        font-weight: 600;
-        opacity: 0.9;
-    }
-
-    .product-detail ul li span {
-        font-weight: 400;
-    }
-
-    .purchase-info {
-        margin: 1.5rem 0;
-    }
-
-    .purchase-info input,
-    .purchase-info .btn {
-        border: 1.5px solid #ddd;
-        border-radius: 25px;
-        text-align: center;
-        padding: 0.45rem 0.8rem;
-        outline: 0;
-        margin-right: 0.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .purchase-info input {
-        width: 60px;
-    }
-
-    .purchase-info .btn {
-        cursor: pointer;
-        color: #fff;
-    }
-
-    .purchase-info .btn:first-of-type {
-        background: #256eff;
-    }
-
-    .purchase-info .btn:last-of-type {
-        background: #f64749;
-    }
-
-    .purchase-info .btn:hover {
-        opacity: 0.9;
-    }
-
-    .social-links {
-        display: flex;
-        align-items: center;
-    }
-
-    .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 32px;
-        height: 32px;
-        color: #000;
-        border: 1px solid #000;
-        margin: 0 0.2rem;
-        border-radius: 50%;
-        text-decoration: none;
-        font-size: 0.8rem;
-        transition: all 0.5s ease;
-    }
-
-    .social-links a:hover {
-        background: #000;
-        border-color: transparent;
-        color: #fff;
-    }
-
-    @media screen and (min-width: 992px) {
-        .card {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 1.5rem;
-        }
-
-        .card-wrapper {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .product-imgs {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .product-content {
-            padding-top: 0;
-        }
-    }
-</style>
-
-<body>
-    <h1>id:{{$product->id}}</h1>
-    <h1>Name:{{$product->product_name}}</h1>
-    <h1>Price:{{$product->price}}</h1>
-    <h1>RAM:{{$product->ram}}</h1>
-    <h1>Storage:{{$product->storage}}</h1>
-    <h1>ImgName:{{$productImg->product_img}}</h1>
-    <h1>Color:{{$productImg->color_name}}</h1>
-    <div class=" ">
-        <div>
-            <img src="{{ '/assets/' . $productImg->product_img }}" alt="" width="300px" height="400px">
+<div class="container p-2 bg-light">
+    <div class="row">
+        <div class="col-sm-6 p-4 bg-white text-center">
+            <div>
+                <img src="{{ '/assets/' . $productImg->product_img }}" alt="" width="320px" height="300px">
+            </div>
+            <hr class="text-warning font-weight-bold">
+            <div class="justify-content-center m-auto">
+                {{-- <div class="col-sm-3 border shadow-sm"><img src="/assets/iphone-1.jpg" width="80%"  alt=""></div> --}}
+                <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
+                <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
+                <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
+            </div>
+            <br>
+            <hr>
+            <div id="carouselExampleIndicators" class="carousel slide text-center w-100 h-100" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="/assets/cover-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="/assets/cover-4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="/assets/cover-5.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button> --}}
+            </div>
         </div>
-            <!-- card right -->
+        <div class="col-sm-6 p-4">
+            {{-- <h3>id:{{$product->id}}</h3> --}}
+            <h3>{{$product->product_name}} {{$product->storage}}G USA (New)</h3>
+            <hr class="text-warning font-weight-bold">
+            <h4 class="text-warning font-weight-bold"><strong>$ {{$product->price}}</strong></h4>
+            <h6>Ram: <strong>{{$product->ram}}G</strong></h6>
+            <h6>Storage: <strong>{{$product->storage}}G</strong></h6>
+            <h6>Display: <strong>6.7" </strong>1284x2778 pixels</h6>
+            <h6>Battery: <strong>{{$product->battery}}mAh</strong></h6>
+            <h6>Color: <strong>{{$productImg->color_name}}</strong></h6>
+            <h6>Weight:	<strong>240 g (8.47 oz)</strong></h6>
+            <h6>In Box:
+                <li class="text-info">Free Jelly Case</li>
+                <li class="text-info">Free Temper Glass</li>
+                <li class="text-info">Free Adaptor 20W</li>
+            </h6>
+            <h6>Apple Store Warranty: <strong>1 Year</strong></h6>
+            <h6>Call Us: <strong>081 6216/0665855 :49</strong></h6>
+            <h6>Location: <strong>Phnom Penh</strong></h6>
+            <br>
+            <hr>
             <div class = "product-content">
-                <h2 class = "product-title">{{$product->product_name}}</h2>
-                <a href = "#" class = "product-link">visit our store</a>
                 <div class = "product-rating">
-                    <i class = "fas fa-star"></i>
-                    <i class = "fas fa-star"></i>
-                    <i class = "fas fa-star"></i>
-                    <i class = "fas fa-star"></i>
-                    <i class = "fas fa-star-half-alt"></i>
+                    <i class = "fas fa-star text-warning"></i>
+                    <i class = "fas fa-star text-warning"></i>
+                    <i class = "fas fa-star text-warning"></i>
+                    <i class = "fas fa-star text-warning"></i>
+                    <i class = "fas fa-star-half-alt text-warning"></i>
                     <span>4.7(21)</span>
                 </div>
-
-                <div class = "product-price">
-                    <p class = "new-price">Price: <span>${{$product->price}}</span></p>
-                </div>
-
+                <br>
                 <div class = "product-detail">
-                    <ul>
-                        <li>Color: <span>{{$productImg->color_name}}</span></li>
-                        <li>Available: <span class=" text-red">in stock</span></li>
-                        <li>Category: <span>Phones</span></li>
-                        <li>Shipping Area: <span>All over the world</span></li>
-                        <li>Shipping Fee: <span>Free</span></li>
-                    </ul>
+                    <h6>Available: <span class="font-weight-bold">In stock</span></h6>
+                    <h6>Category: <span>iPhone, Smartphone</span></h6>
+                    <h6>Shipping Fee: <span>Free</span></h6>
+                    <h6>Shipping Area: <span>All over the world</span></h6>
                 </div>
-
-                <div class = "purchase-info">
-                    <input type = "number" min = "0" value = "1">
-                    <button type = "button" class = "btn">
-                        Buy now <i class = "fas fa-shopping-cart"></i>
+                <p><strong>Disclaimer. </strong>We can not guarantee that the information on this page is 100% correct.</p>
+                <hr>
+                <div class = "purchase-info d-flex p-2">
+                    <input type="number" class="form-control w-25 m-2" min="0" value="1">
+                    <button type="button" class="btn bg-warning text-bold text-white m-2">
+                        Buy now <i class="fas fa-shopping-cart text-danger"></i>
                     </button>
-                </div>
-
-                <div class = "social-links">
-                    <p>Share At: </p>
-                    <a href = "#">
-                        <i class = "fab fa-facebook-f"></i>
-                    </a>
-                    <a href = "#">
-                        <i class = "fab fa-twitter"></i>
-                    </a>
-                    <a href = "#">
-                        <i class = "fab fa-instagram"></i>
-                    </a>
-                    <a href = "#">
-                        <i class = "fab fa-whatsapp"></i>
-                    </a>
-                    <a href = "#">
-                        <i class = "fab fa-pinterest"></i>
-                    </a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-
-    <script src="script.js"></script>
-</body>
-
-</html>
-
-<script>
-    const imgs = document.querySelectorAll('.img-select a');
-    const imgBtns = [...imgs];
-    let imgId = 1;
-
-    imgBtns.forEach((imgItem) => {
-        imgItem.addEventListener('click', (event) => {
-            event.preventDefault();
-            imgId = imgItem.dataset.id;
-            slideImage();
-        });
-    });
-
-    function slideImage() {
-        const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
-
-        document.querySelector('.img-showcase').style.transform = translateX($ {
-                -(imgId - 1) * displayWidth
-            }
-            px);
-    }
-
-    window.addEventListener('resize', slideImage);
-</script>
+@endsection

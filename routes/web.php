@@ -37,7 +37,9 @@ Route::get('/menu',[HomeController::class,'menu'])->name('menu');
 Route::get('/footer',[HomeController::class,'footer'])->name('footer');
 Route::get('/testhome',[HomeController::class,'test'])->name('test');
 Route::get('/product',[HomeController::class,'product'])->name('product');
-Route::get('/home/productDetail/{id}', [PhoneController::class, 'showDetail'])->name('home.productDetail');
+Route::get('/home/productdetail/{id}', [PhoneController::class, 'showDetail'])->name('home.productDetail');
+Route::get('/phone/productlist', [HomeController::class, 'productList'])->name('home.product.list');
+
 
 //admin routes Product
 Route::get('/admin/phone',[PhoneController::class,'list'])->name('list.phone');
@@ -81,10 +83,6 @@ Route::get('/admin/employee/components', function () {
 Route::get('/about', function(){
     return view('about.about');
 });
-
-// Route::get('/phoneshop/home/', function () {
-//     return view('Frontend.product.home');
-// });
 
 // Route::get('/admin/dashboard', function(){
 //     return view('admin.dashboard.dashboard');

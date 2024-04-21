@@ -22,10 +22,10 @@
 
     </tr>
 
-    {{-- @foreach ($products as $product) --}}
+    @foreach ($products as $product)
 
       <tr class="text-center">
-        {{-- <td>{{$product->id}}</td>
+        <td>{{$product->id}}</td>
         <td>{{$product->product_code}}</td>
         <td >
           {{$product->product_name}}
@@ -39,17 +39,17 @@
                         <img src="{{ '/assets/' . $img->product_img }}" alt="" width="100px" height="120px">
                         @endif
           @endforeach
-        </td> --}}
+        </td>
 
         <td>
-          {{-- <form method="POST" action="{{route('delete.phone',['product'=>$product])}}"> --}}
-          <form method="POST" action="">
+          <form method="POST" action="{{route('delete.phone',['product'=>$product])}}">
+          {{-- <form method="POST" action=""> --}}
             @csrf
             @method('DELETE')
             <div class="d-flex justify-content-center align-items-center">
               <a
-                {{-- href="{{route('edit.phone',['product'=>$product])}}" --}}
-                href=""
+                href="{{route('edit.phone',['product'=>$product])}}"
+                {{-- href="" --}}
                 class="text-secondary text-decoration-none "
               >
                 <img src="/assets/edit.svg"/>
@@ -65,7 +65,7 @@
       </tr>
 
 
-    {{-- @endforeach --}}
+    @endforeach
   </table>
 
 

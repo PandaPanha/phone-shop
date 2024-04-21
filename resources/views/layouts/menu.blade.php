@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <title>phone-detail</title>
 </head>
 <style>
     *{
@@ -103,7 +103,7 @@
 </style>
 <body>
     <div id="app">
-        <nav>
+        <nav class="">
             <div class="logo">
                 <a href="{{ url('/') }}">
                     <img src="assets/logo.jpg" alt="Logo">
@@ -111,19 +111,19 @@
                 </a>
             </div>
             <div class="right">
-                <ul>
-                    <li><a href="{{ url('/') }}">HOME</a></li>
-                    <li><a href="{{ url('/product') }}">PRODUCT</a></li>
+                <ul class="p-3">
+                    <li><a href="{{ url('/home') }}">HOME</a></li>
+                    <li><a href="{{ url('/phone/productlist') }}">PRODUCT</a></li>
                     <li><a href="{{ url('/about') }}">ABOUT</a></li>
                     <li><a href="{{ url('/contact') }}">CONTACT</a></li>
                 </ul>
             </div>
-            
+
         </nav>
-        <div class="test">
-        </div>
-        @yield('content')
-        @extends('layouts.footer')
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </div>
+    @yield('content')
+    @extends('layouts.footer')
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
