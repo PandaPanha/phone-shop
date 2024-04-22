@@ -3,8 +3,10 @@
 use App\Http\Controllers\Authenticate;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProductController;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,10 +47,7 @@ Route::get('/testhome',[HomeController::class,'test'])->name('test');
 Route::get('/product',[HomeController::class,'product'])->name('product');
 Route::get('/home/productDetail/{id}', [PhoneController::class, 'showDetail'])->name('home.productDetail');
 Route::post('/logout', [Authenticate::class, 'logout'])->name('logout');
-
-
-
-
+Route::post('/home/order/store/{id}', [OrderController::class, 'store'])->name('order.store');
 
 
 Route::get('/admin/auth', function () {
