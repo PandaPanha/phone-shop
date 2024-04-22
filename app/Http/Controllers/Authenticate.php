@@ -38,6 +38,11 @@ class Authenticate extends Controller
         return redirect()->route('dashboard');
     } 
 
+    public function logout(){
+        Auth::logout();
+        return redirect('login');
+    }
+
     public function loginA(Request $request) {
         try {
             $validateUser = Validator::make($request->all(), [

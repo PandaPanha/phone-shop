@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    public function listProducts(){
+
+        $products= Product::all();
+        $product_imgs = ProductImage::all();
+        return view('Frontend.home',['products' => $products, 'product_imgs' => $product_imgs]);
+        
+    }
+
     public function home(){
 
         $products = Product::all();
@@ -28,4 +37,5 @@ class HomeController extends Controller
     public function product(){
         return view('Frontend.selectProduct');
     }
+
 }
