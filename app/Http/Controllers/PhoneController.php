@@ -37,7 +37,7 @@ class PhoneController extends Controller
         ProductImage::create([
             'product_img' => $request->get('product_img'),
             'color_name' => $request->get('color_name'),
-            'product_id' => $p->id,
+            'product_id' => $p->id, //take id from Product
         ]);
 
         return redirect()->route('list.phone');
