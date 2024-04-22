@@ -28,7 +28,6 @@ class PhoneController extends Controller
     }
 
     public function store(Request $request){
-        $product = $request->all();
         $p = Product::create([
             'product_code'  => $request->get('product_code'),
             'product_name'  => $request->get('product_name'),

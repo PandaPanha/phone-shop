@@ -255,6 +255,25 @@
 </style>
 
 <body>
+    <form action="{{route('order.store', ['id'=>$product->id])}}" method="POST">
+        @csrf
+        <div class="row">
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Email:</label>
+                    <input type="text" class="form-control" name="email"  placeholder="user@email.com" required>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-3">
+                <div class="form-group">
+                    <label for="">Phone:</label>
+                    <input type="text" class="form-control" name="phone"  placeholder="xxx-xxx-xxx" required>
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
     <h1>id:{{$product->id}}</h1>
     <h1>Name:{{$product->product_name}}</h1>
     <h1>Price:{{$product->price}}</h1>
