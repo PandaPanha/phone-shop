@@ -22,6 +22,8 @@
                       {{$title}}
                     </div>
                   </div>
-                </a>
+          </a>
+          
       </div>
+      
 </div>

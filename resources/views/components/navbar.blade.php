@@ -34,7 +34,7 @@
                   [
                   "title" => "About",
                   "src" => "/assets/info.png",
-                  "path" => "/about"
+                  "path" => "/admin/about"
                   ],
                   [
                   "title" => "Setting",

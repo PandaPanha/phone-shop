@@ -97,13 +97,13 @@
             <div class="card p-4 " >
                 @foreach ($product_imgs as $img)
                     @if ($item->id == $img->product_id )
-                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="200px" height="230px">
+                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="200px" height="200px">
                     @endif
                 @endforeach
                 <div class="card-body">
                     <hr>
                     <h4 class="card-text">{{$item->product_name}}</h4>
-                    <p class="card-title">$ {{$item->price}}</p>
+                    <h5 class="card-title text-warning"><strong>$ {{$item->price}}</strong></h5>
                 </div>
             </div>
         </a>

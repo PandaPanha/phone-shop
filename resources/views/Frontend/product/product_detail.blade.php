@@ -60,8 +60,8 @@
                 <li class="text-info">Free Adaptor 20W</li>
             </h6>
             <h6>Apple Store Warranty: <strong>1 Year</strong></h6>
-            <h6>Call Us: <strong>081 6216/0665855 :49</strong></h6>
-            <h6>Location: <strong>Phnom Penh</strong></h6>
+            <h6>Call Us: <strong>0816216/0665855 :49</strong></h6>
+            <h6>Location: <strong>St.2004</strong>, Phnom Penh</h6>
             <br>
             <hr>
             <div class = "product-content">

@@ -39,8 +39,11 @@ class Authenticate extends Controller
         ]);
 
         return redirect()->route('dashboard');
-// <<<<<<< HEAD
-// =======
+
+    }
+    public function logout(){
+        Auth::logout();
+        return redirect('login');
     }
 
     public function loginA(Request $request) {
@@ -76,7 +79,6 @@ class Authenticate extends Controller
                 'message' => $e->getMessage(),
             ], 500);
         }
-// >>>>>>> cd729864dc8b04bea93d335e36023f6aded6702d
     }
 }
 

@@ -78,7 +78,7 @@
                     <hr>
                     <h4 class="card-text">{{$item->product_name}}</h4>
                     <h5 class="card-title text-warning"><strong>$ {{$item->price}}</strong></h5>
-                    
+
                 </div>
             </div>
         </a>

@@ -24,8 +24,14 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
-
-
+    //admin routes Product
+    Route::get('/admin/phone',[PhoneController::class,'list'])->name('list.phone');
+    Route::get('/admin/phone/create',[PhoneController::class,'create'])->name('create.phone');
+    Route::post('/admin/phone/store',[PhoneController::class,'store'])->name('store.phone');
+    Route::get('/admin/edit/{product}',[PhoneController::class,'edit'])->name('edit.phone');
+    Route::put('/admin/update/{id}',[PhoneController::class,'update'])->name('update.phone');
+    Route::get('/admin/{product}/detail',[PhoneController::class,'detail'])->name('detail.phone');
+    Route::delete('/admin/{product}/delete',[PhoneController::class,'delete'])->name('delete.phone');
 });
 
 Route::get('/home',[HomeController::class,'listProducts'])->name('home.list');
@@ -37,18 +43,11 @@ Route::get('/menu',[HomeController::class,'menu'])->name('menu');
 Route::get('/footer',[HomeController::class,'footer'])->name('footer');
 Route::get('/testhome',[HomeController::class,'test'])->name('test');
 Route::get('/product',[HomeController::class,'product'])->name('product');
-Route::get('/home/productdetail/{id}', [PhoneController::class, 'showDetail'])->name('home.productDetail');
 Route::get('/phone/productlist', [HomeController::class, 'productList'])->name('home.product.list');
+Route::get('/home/productDetail/{id}', [PhoneController::class, 'showDetail'])->name('home.productDetail');
+Route::post('/logout', [Authenticate::class, 'logout'])->name('logout');
 
 
-//admin routes Product
-Route::get('/admin/phone',[PhoneController::class,'list'])->name('list.phone');
-Route::get('/admin/phone/create',[PhoneController::class,'create'])->name('create.phone');
-Route::post('/admin/phone/store',[PhoneController::class,'store'])->name('store.phone');
-Route::get('/admin/edit/{product}',[PhoneController::class,'edit'])->name('edit.phone');
-Route::put('/admin/update/{id}',[PhoneController::class,'update'])->name('update.phone');
-Route::get('/admin/{product}/detail',[PhoneController::class,'detail'])->name('detail.phone');
-Route::delete('/admin/{product}/delete',[PhoneController::class,'delete'])->name('delete.phone');
 
 
 
@@ -80,8 +79,12 @@ Route::get('/admin/employee/components', function () {
     return view('admin.employee.components.add_employee');
 });
 
-Route::get('/about', function(){
+Route::get('/admin/about', function(){
     return view('about.about');
+});
+
+Route::get('/about', function(){
+    return view('Frontend.about.index');
 });
 
 // Route::get('/admin/dashboard', function(){

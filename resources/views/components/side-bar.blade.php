@@ -39,7 +39,7 @@
                 [
                 "title" => "Phone",
                 "src" => "/assets/phone.png",
-                "path" => "/admin/phones"
+                "path" => "/admin/phone"
                 ],
                 [
                 "title" => "Employee",
@@ -49,23 +49,28 @@
                 [
                 "title" => "About",
                 "src" => "/assets/info.png",
-                "path" => "/about"
+                "path" => "/admin/about"
                 ],
                 [
                 "title" => "Setting",
                 "src" => "/assets/setting.png",
                 "path" => "#"
                 ],
-                [
-                "title" => "logout",
-                "src" => "/assets/logout.png",
-                "path" => "#"
-                ]
             ];
             @endphp
             @foreach ($items as $item )
                 <x-side-bar-item :title="$item['title']" :path="$item['path']" :src="$item['src']"/>
             @endforeach
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <div class="d-flex align-items-center ">
+                <img src="/assets/logout.png" alt="logout" style="width:30px; height:30px; object-fit:contain;">
+                <button type="submit" class="text-secondary bg-transparent border-0 fw-bold">
+                  Logout
+                </button>
+              </div>
+
+            </form>
         </div>
       </div>
     </div>
