@@ -22,13 +22,18 @@ class PhoneController extends Controller
         return view('Frontend.product.product_detail', ['product' => $product, 'productImg' => $productImg]);
     }
 
+    public function OrderStore($id){
+        $product = Product::where('id', $id)->first();
+        $productImg = ProductImage::where('product_id', $product->id)->first();
+        return view('Frontend.product.form_order', ['product' => $product, 'productImg' => $productImg]);
+    }
+
     public function create(){
 
         return view('admin.phones.components.add_phone');
     }
 
     public function store(Request $request){
-        $product = $request->all();
         $p = Product::create([
             'product_code'  => $request->get('product_code'),
             'product_name'  => $request->get('product_name'),

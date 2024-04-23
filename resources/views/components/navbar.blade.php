@@ -29,7 +29,7 @@
                   [
                   "title" => "Employee",
                   "src" => "/assets/employee.png",
-                  "path" => "/admin/employee"
+                  "path" => "/admin/employee/employeelist"
                   ],
                   [
                   "title" => "About",

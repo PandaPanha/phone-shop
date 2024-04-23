@@ -74,8 +74,6 @@
 
                                 @if (Auth::check())
                                     <a href="" class="w-100" >register</a>
-                                @else
-                                    <a href="{{route('login')}}" >login</a>
                                 @endif
                             </div>
                         </form>

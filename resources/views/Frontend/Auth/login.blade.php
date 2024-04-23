@@ -71,7 +71,7 @@
                         <button type="submit" class="btn btn-info mt-5 w-100">Login</button>
                     </div>
                     <div class="col-xs-6">
-                        <button type="submit" class="btn btn-info mt-5">Forgot Password</button>
+                        <a href="{{ url('/register') }}" type="btn" class="btn btn-info mt-5">Register Account</a>
                     </div>
                    </div>
                 </div>

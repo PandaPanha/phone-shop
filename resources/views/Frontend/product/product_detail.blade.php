@@ -9,7 +9,6 @@
             </div>
             <hr class="text-warning font-weight-bold">
             <div class="justify-content-center m-auto">
-                {{-- <div class="col-sm-3 border shadow-sm"><img src="/assets/iphone-1.jpg" width="80%"  alt=""></div> --}}
                 <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
                 <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
                 <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
@@ -33,22 +32,14 @@
                     <img src="/assets/cover-5.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
-                {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button> --}}
             </div>
         </div>
-        <div class="col-sm-6 p-4">
-            {{-- <h3>id:{{$product->id}}</h3> --}}
+        <div class="col-sm-6 p-4 bg-light">
             <h3>{{$product->product_name}} {{$product->storage}}G USA (New)</h3>
             <hr class="text-warning font-weight-bold">
             <h4 class="text-warning font-weight-bold"><strong>$ {{$product->price}}</strong></h4>
             <h6>Ram: <strong>{{$product->ram}}G</strong></h6>
+
             <h6>Storage: <strong>{{$product->storage}}G</strong></h6>
             <h6>Display: <strong>6.7" </strong>1284x2778 pixels</h6>
             <h6>Battery: <strong>{{$product->battery}}mAh</strong></h6>
@@ -84,9 +75,9 @@
                 <hr>
                 <div class = "purchase-info d-flex p-2">
                     <input type="number" class="form-control w-25 m-2" min="0" value="1">
-                    <button type="button" class="btn bg-warning text-bold text-white m-2">
+                    <a href="{{ route('home.store', ['id'=>$product->id])}} " class="btn bg-warning text-bold text-white m-2">
                         Buy now <i class="fas fa-shopping-cart text-danger"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

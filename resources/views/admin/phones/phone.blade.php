@@ -36,7 +36,7 @@
         <td>
           @foreach ($product_imgs as $img)
                         @if ($product->id == $img->product_id )
-                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="100px" height="120px">
+                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="120px" height="120px">
                         @endif
           @endforeach
         </td>
