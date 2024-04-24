@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+    Route::get('/admin/dashboard/dashboard.',[DashboardController::class,'dashboard'])->name('dashboard');
     //admin routes Product
     Route::get('/admin/phone',[PhoneController::class,'list'])->name('list.phone');
     Route::get('/admin/phone/create',[PhoneController::class,'create'])->name('create.phone');
@@ -49,7 +49,7 @@ Route::get('/footer',[HomeController::class,'footer'])->name('footer');
 Route::get('/testhome',[HomeController::class,'test'])->name('test');
 Route::get('/product',[HomeController::class,'product'])->name('product');
 Route::get('/phone/productlist', [HomeController::class, 'productList'])->name('home.product.list');
-Route::get('/home/productDetail/{id}', [PhoneController::class, 'showDetail'])->name('home.productDetail');
+Route::get('/home/productDetail/{id}', [PhoneController::class, 'showDetail'])->name(',');
 Route::post('/logout', [Authenticate::class, 'logout'])->name('logout');
 Route::post('/home/order/store/{id}', [OrderController::class, 'store'])->name('order.store');
 Route::get('/home/order/{id}', [PhoneController::class, 'OrderStore'])->name('home.store');
@@ -81,6 +81,14 @@ Route::get('/admin/about', function(){
 
 Route::get('/about', function(){
     return view('Frontend.about.index');
+});
+
+Route::get('/contact', function(){
+    return view('Frontend.contact.contact');
+});
+
+Route::get('/admin/about', function(){
+    return view('about.about');
 });
 
 // Route::get('/admin/dashboard', function(){

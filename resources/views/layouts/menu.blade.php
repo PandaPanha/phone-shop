@@ -102,25 +102,23 @@
     }
 </style>
 <body>
-    <div id="app">
-        <nav class="">
-            <div class="logo">
-                <a href="{{ url('/') }}">
-                    <img src="assets/logo.jpg" alt="Logo">
-                    <span>SHOP</span>
-                </a>
-            </div>
-            <div class="right">
-                <ul class="p-3">
-                    <li><a href="{{ url('/home') }}">HOME</a></li>
-                    <li><a href="{{ url('/phone/productlist') }}">PRODUCT</a></li>
-                    <li><a href="{{ url('/about') }}">ABOUT</a></li>
-                    <li><a href="{{ url('/contact') }}">CONTACT</a></li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="logo">
+            <a href="{{ url('/') }}">
+                <img src="assets/logo.jpg" alt="Logo">
+                <span>SHOP</span>
+            </a>
+        </div>
+        <div class="right">
+            <ul class="p-3">
+                <li><a href="{{ url('/home') }}">HOME</a></li>
+                <li><a href="{{ url('/phone/productlist') }}">PRODUCT</a></li>
+                <li><a href="{{ url('/about') }}">ABOUT</a></li>
+                <li><a href="{{ url('/contact') }}">CONTACT</a></li>
+            </ul>
+        </div>
+      </nav>
 
-        </nav>
-    </div>
     @yield('content')
     @extends('layouts.footer')
 

@@ -65,15 +65,17 @@
 <div class="m-4">
     <h3 class="">Smart Phone</h3>
     <hr>
-    <div class="item p-2 d-flex  ">
+    <div class="item row p-2 d-flex  ">
         @foreach ($products as $item)
-        <a href="{{route('home.productDetail', ['id'=>$item->id])}}" class=" text-decoration-none m-3 p-3">
-            <div class="card p-4 " >
-                @foreach ($product_imgs as $img)
+        <a href="{{route('home.productDetail', ['id'=>$item->id])}}" class="col-sm-3 text-decoration-none m-3 p-3">
+            <div class="card p-4" >
+                <div class="d-flex justify-content-center">
+                    @foreach ($product_imgs as $img)
                     @if ($item->id == $img->product_id )
                         <img src="{{ '/assets/' . $img->product_img }}" alt="" width="200px" height="200px">
                     @endif
-                @endforeach
+                    @endforeach
+                </div>
                 <div class="card-body">
                     <hr>
                     <h4 class="card-text">{{$item->product_name}}</h4>
