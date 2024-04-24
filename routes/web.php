@@ -49,7 +49,7 @@ Route::get('/footer',[HomeController::class,'footer'])->name('footer');
 Route::get('/testhome',[HomeController::class,'test'])->name('test');
 Route::get('/product',[HomeController::class,'product'])->name('product');
 Route::get('/phone/productlist', [HomeController::class, 'productList'])->name('home.product.list');
-Route::get('/home/productDetail/{id}', [PhoneController::class, 'showDetail'])->name(',');
+Route::get('/home/productDetail/{id}', [PhoneController::class, 'showDetail'])->name('home.productDetail');
 Route::post('/logout', [Authenticate::class, 'logout'])->name('logout');
 Route::post('/home/order/store/{id}', [OrderController::class, 'store'])->name('order.store');
 Route::get('/home/order/{id}', [PhoneController::class, 'OrderStore'])->name('home.store');
