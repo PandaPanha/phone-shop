@@ -3,43 +3,53 @@
 
 <div class="container p-2 bg-light">
     <div class="row">
-        <div class="col-sm-6 p-4 bg-white text-center">
-            <div>
-                <img src="{{ '/assets/' . $productImg->product_img }}" alt="" width="320px" height="300px">
-            </div>
-            <hr class="text-warning font-weight-bold">
-            <div class="justify-content-center m-auto">
-                <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
-                <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
-                <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
+        <div class="col-sm-6 p-4 bg-white">
+            <div class="d-flex justify-content-center p-3">
+                <img src="{{ '/assets/' . $productImg->product_img }}" alt="" width="300px" height="300px">
             </div>
             <br>
-            <hr>
-            <div id="carouselExampleIndicators" class="carousel slide text-center w-100 h-100" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img src="/assets/cover-1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="/assets/cover-4.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="/assets/cover-5.jpg" class="d-block w-100" alt="...">
+            <hr class="text-warning font-weight-bold">
+            <form action="{{route('order.store', ['id'=>$product->id])}}" method="POST">
+                @csrf
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Full Name:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control form-control-sm" name="name" id="colFormLabelSm" placeholder="please your name..." required>
                     </div>
                 </div>
-            </div>
+                <br>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Phone:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control form-control-sm" name="phone" id="colFormLabelSm" placeholder="please your phone number..." required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Email:</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control form-control-sm" name="email" id="colFormLabelSm" placeholder="please your email..." required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Address:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control form-control-sm" name="address" id="colFormLabelSm" placeholder="please your phone number..." required>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success">Buy Now</button>
+                </div>
+            </form>
         </div>
-        <div class="col-sm-6 p-4 bg-light">
+        <div class="col-sm-6 p-4">
             <h3>{{$product->product_name}} {{$product->storage}}G USA (New)</h3>
             <hr class="text-warning font-weight-bold">
             <h4 class="text-warning font-weight-bold"><strong>$ {{$product->price}}</strong></h4>
             <h6>Ram: <strong>{{$product->ram}}G</strong></h6>
-
             <h6>Storage: <strong>{{$product->storage}}G</strong></h6>
             <h6>Display: <strong>6.7" </strong>1284x2778 pixels</h6>
             <h6>Battery: <strong>{{$product->battery}}mAh</strong></h6>
@@ -73,15 +83,9 @@
                 </div>
                 <p><strong>Disclaimer. </strong>We can not guarantee that the information on this page is 100% correct.</p>
                 <hr>
-                <div class = "purchase-info d-flex p-2">
-                    <input type="number" class="form-control w-25 m-2" min="0" value="1">
-                    <a href="{{ route('home.store', ['id'=>$product->id])}} " class="btn bg-warning text-bold text-white m-2">
-                        Buy now <i class="fas fa-shopping-cart text-danger"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection
+

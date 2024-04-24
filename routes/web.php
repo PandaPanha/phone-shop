@@ -3,8 +3,10 @@
 use App\Http\Controllers\Authenticate;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProductController;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,29 +34,31 @@ Route::group(['middleware' => 'auth'], function(){
     Route::put('/admin/update/{id}',[PhoneController::class,'update'])->name('update.phone');
     Route::get('/admin/{product}/detail',[PhoneController::class,'detail'])->name('detail.phone');
     Route::delete('/admin/{product}/delete',[PhoneController::class,'delete'])->name('delete.phone');
+    Route::get('/admin/edit_employee/{employee}',[Authenticate::class,'edit'])->name('edit.employee');
+    Route::put('/admin/update_employee/{id}',[Authenticate::class,'update'])->name('update.employee');
+    Route::delete('/admin/delete/{employee}/',[Authenticate::class,'delete'])->name('delete.employee');
 });
 
 Route::get('/home',[HomeController::class,'listProducts'])->name('home.list');
 Route::get('/login',[Authenticate::class,'login'])->name('login');
 Route::post('/login',[Authenticate::class,'loginA'])->name('loginA');
-Route::get('/register',[Authenticate::class,'register']);
+Route::get('/register',[Authenticate::class,'register'])->name('register');
 Route::post('/admin/user/store',[Authenticate::class,'store'])->name('user.store');
 Route::get('/menu',[HomeController::class,'menu'])->name('menu');
 Route::get('/footer',[HomeController::class,'footer'])->name('footer');
 Route::get('/testhome',[HomeController::class,'test'])->name('test');
 Route::get('/product',[HomeController::class,'product'])->name('product');
+Route::get('/phone/productlist', [HomeController::class, 'productList'])->name('home.product.list');
 Route::get('/home/productDetail/{id}', [PhoneController::class, 'showDetail'])->name('home.productDetail');
 Route::post('/logout', [Authenticate::class, 'logout'])->name('logout');
+Route::post('/home/order/store/{id}', [OrderController::class, 'store'])->name('order.store');
+Route::get('/home/order/{id}', [PhoneController::class, 'OrderStore'])->name('home.store');
+Route::get('/admin/employee/employeelist', [Authenticate::class, 'list'])->name('employee.list');
 
 
-
-
-
-
-Route::get('/admin/auth', function () {
-    return view('admin.auth.login');
+Route::get('/hi',function(){
+    return 'hi';
 });
-
 Route::get('/admin/phones', function () {
     return view('admin.phones.phone');
 });
@@ -63,8 +67,20 @@ Route::get('/admin/phones/components', function () {
     return view('admin.phones.components.add_phone');
 });
 
-Route::get('/about', function(){
+// Route::get('/admin/employee', function () {
+//     return view('admin.employee.index');
+// });
+
+Route::get('/admin/employee/components', function () {
+    return view('admin.employee.components.add_employee');
+});
+
+Route::get('/admin/about', function(){
     return view('about.about');
+});
+
+Route::get('/about', function(){
+    return view('Frontend.about.index');
 });
 
 // Route::get('/admin/dashboard', function(){

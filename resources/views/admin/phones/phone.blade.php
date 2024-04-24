@@ -21,7 +21,7 @@
       <th>Action</th>
 
     </tr>
-   
+
     @foreach ($products as $product)
 
       <tr class="text-center">
@@ -36,18 +36,20 @@
         <td>
           @foreach ($product_imgs as $img)
                         @if ($product->id == $img->product_id )
-                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="100px" height="120px">
+                        <img src="{{ '/assets/' . $img->product_img }}" alt="" width="120px" height="120px">
                         @endif
           @endforeach
         </td>
-        
+
         <td>
           <form method="POST" action="{{route('delete.phone',['product'=>$product])}}">
+          {{-- <form method="POST" action=""> --}}
             @csrf
             @method('DELETE')
             <div class="d-flex justify-content-center align-items-center">
-              <a 
+              <a
                 href="{{route('edit.phone',['product'=>$product])}}"
+                {{-- href="" --}}
                 class="text-secondary text-decoration-none "
               >
                 <img src="/assets/edit.svg"/>
@@ -62,9 +64,9 @@
         </td>
       </tr>
 
-        
+
     @endforeach
   </table>
-  
+
 
 @endsection()

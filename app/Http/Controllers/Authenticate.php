@@ -19,10 +19,12 @@ class Authenticate extends Controller
 
         return view('Frontend.Auth.login');
     }
+    public function index(){
+        return 'hi';
+    }
 
     public function register(){
-
-        return view('Frontend.Auth.register');
+        return view('admin.employee.components.add_employee');
     }
 
     public function store(RegisterRequest $request){
@@ -36,8 +38,37 @@ class Authenticate extends Controller
         ]);
 
         return redirect()->route('dashboard');
-    } 
 
+    }
+
+    public function list(){
+        $employee= User::all();
+        return view('admin.employee.employeelist',['employee' => $employee]);
+    }
+    public function edit(User $employee){
+        return view('admin.employee.components.edit_employee',['employee' => $employee]);
+    }
+
+    public function update(Request $request, $id){
+
+        $employee = User::where('id', $id)->first();
+        $employee->name  = $request->name;
+        $employee->email  = $request->email;
+        $employee->password  = $request->password;
+
+        return redirect()->route('employee.list');
+    }
+
+
+    public function delete(User $employee){
+
+        //Delete the product
+        $employee->delete();
+
+        return redirect()->route('employee.list');
+    }
+
+    // public function
     public function logout(){
         Auth::logout();
         return redirect('login');
@@ -49,21 +80,21 @@ class Authenticate extends Controller
                 'email' => 'required',
                 'password' => 'required',
             ]);
-    
+
             if ($validateUser->fails()) {
                 throw new ValidationException($validateUser);
             }
-    
+
             if (!Auth::attempt($request->only(['email', 'password']))) {
                 throw new AuthenticationException('Email and password do not match our records');
             }
-    
+
             return view('admin.dashboard.dashboard');
         } catch (ValidationException $e) {
             return response()->json([
                 'status' => false,
                 'message' => 'Validation error',
-                
+
             ], 401);
         } catch (AuthenticationException $e) {
             return response()->json([

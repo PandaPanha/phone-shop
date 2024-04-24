@@ -39,7 +39,7 @@
                     <label for="">Ram:</label>
                     <input type="text" class="form-control" name="ram"  placeholder="Enter Warranty" required>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -53,7 +53,7 @@
                     <label for="">Camera:</label>
                     <input type="text" class="form-control" name="camera"  placeholder="Enter Warranty" required>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -67,7 +67,7 @@
                     <label for="">Warranty:</label>
                     <input type="text" class="form-control" name="warranty"  placeholder="Enter Warranty" required>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -81,7 +81,7 @@
                     <label for="">Storage:</label>
                     <input type="text" class="form-control" name="storage"  placeholder="Enter Warranty" required>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -95,7 +95,7 @@
                     <label for="">Color name:</label>
                     <input type="text" class="form-control" name="color_name"required>
                 </div>
-            </div> 
+            </div>
         </div>
 
         <br>

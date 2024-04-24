@@ -40,7 +40,7 @@
                     <label for="">Ram:</label>
                     <input type="text" class="form-control" name="ram"  value="{{$product->ram}}">
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -54,7 +54,7 @@
                     <label for="">Camera:</label>
                     <input type="text" class="form-control" name="camera" value="{{$product->camera}}">
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -68,7 +68,7 @@
                     <label for="">Warranty:</label>
                     <input type="text" class="form-control" name="warranty"  value="{{$product->warranty}}">
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -82,7 +82,7 @@
                     <label for="">Storage:</label>
                     <input type="text" class="form-control" name="storage" value="{{$product->storage}}">
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
@@ -96,7 +96,7 @@
                     <label for="">Color name:</label>
                     <input type="text" class="form-control" name="color_name" value="{{$productImg->color_name}}" required >
                 </div>
-            </div> 
+            </div>
         </div>
         <br>
         <button type="submit" class="btn btn-success">Update</button>
