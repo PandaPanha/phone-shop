@@ -80,7 +80,7 @@
                         <button type="submit" class="btn mt-2 w-100" style="background-color: #8796a5; padding: 11%; color: #ffffff">Login</button>
                     </div>
                     <div class="col-xs-6">
-                        <a href="{{ url('/') }}" type="btn" class="btn mt-2" style="background-color: #ffffff; padding: 11%; color: #8796a5">Phone Shop</a>
+                        <a href="{{ url('/') }}" type="btn" class="btn mt-2" style="background-color: #ffffff; padding: 11%; color: #8796a5">Home</a>
                     </div>
                    </div>
                 </div>
