@@ -16,7 +16,7 @@
                             Phone
                         </p>
                         <p class="h3">
-                           98`
+                           98
                         </p>
                     </div>
                 </div>

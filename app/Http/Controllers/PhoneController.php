@@ -52,6 +52,7 @@ class PhoneController extends Controller
             'product_id' => $p->id,
         ]);
 
+        
 
 
         return redirect()->route('list.phone');
