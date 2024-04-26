@@ -116,6 +116,7 @@
                     <li><a href="{{ url('/phone/productlist') }}">PRODUCT</a></li>
                     <li><a href="{{ url('/about') }}">ABOUT</a></li>
                     <li><a href="{{ url('/contact') }}">CONTACT</a></li>
+                    <li><a href="{{ url('/login') }}">LOGIN</a></li>
                 </ul>
             </div>
 
