@@ -63,9 +63,10 @@
 ?>
 
 <div class="m-4">
-    <h3 class="">Smart Phone</h3>
+    <h3  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Smart Phone</h3>
+
     <hr>
-    <div class="item row p-2 d-flex  ">
+    <div class="item p-2 d-flex row row-cols-5 justify-content-center flex-wrap ">
         @foreach ($products as $item)
         <a href="{{route('home.productDetail', ['id'=>$item->id])}}" class="col-sm-3 text-decoration-none m-3 p-3">
             <div class="card p-4" >

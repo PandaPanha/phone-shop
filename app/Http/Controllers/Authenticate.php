@@ -37,7 +37,7 @@ class Authenticate extends Controller
 
         ]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('employee.list');
 
     }
 
@@ -71,7 +71,7 @@ class Authenticate extends Controller
     // public function
     public function logout(){
         Auth::logout();
-        return redirect('login');
+        return redirect('home');
     }
 
     public function loginA(Request $request) {

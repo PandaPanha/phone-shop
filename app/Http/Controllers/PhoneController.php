@@ -33,7 +33,7 @@ class PhoneController extends Controller
         return view('admin.phones.components.add_phone');
     }
 
-    public function store(Request $request){
+    public function store(ProductRequest $request){
         $p = Product::create([
             'product_code'  => $request->get('product_code'),
             'product_name'  => $request->get('product_name'),
@@ -49,7 +49,7 @@ class PhoneController extends Controller
         ProductImage::create([
             'product_img' => $request->get('product_img'),
             'color_name' => $request->get('color_name'),
-            'product_id' => $p->id,
+            'product_id' => $p->id, //take id from Product
         ]);
 
         
