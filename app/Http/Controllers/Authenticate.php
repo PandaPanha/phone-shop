@@ -37,7 +37,7 @@ class Authenticate extends Controller
 
         ]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('employee.list');
 
     }
 

@@ -17,13 +17,13 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Product Code:</label>
-                    <input type="text" class="form-control" name="product_code"  placeholder="126" required>
+                    <input type="text" class="form-control" name="product_code"  placeholder="code " required>
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Product Name:</label>
-                    <input type="text" class="form-control" name="product_name"  placeholder="Iphone16" required>
+                    <input type="text" class="form-control" name="product_name"  placeholder="Name phone" required>
                 </div>
             </div>
         </div>
@@ -31,13 +31,13 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Display:</label>
-                    <input type="text" class="form-control" name="display"  placeholder="Enter Battery" required>
+                    <input type="text" class="form-control" name="display"  placeholder="Enter Display" required>
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Ram:</label>
-                    <input type="text" class="form-control" name="ram"  placeholder="Enter Warranty" required>
+                    <input type="text" class="form-control" name="ram"  placeholder="number" required>
                 </div>
             </div>
         </div>
@@ -45,13 +45,13 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Processor:</label>
-                    <input type="text" class="form-control" name="processor"  placeholder="Enter Battery" required>
+                    <input type="text" class="form-control" name="processor"  placeholder="Enter Processor" required>
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Camera:</label>
-                    <input type="text" class="form-control" name="camera"  placeholder="Enter Warranty" required>
+                    <input type="text" class="form-control" name="camera"  placeholder="Enter Camera" required>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Warranty:</label>
-                    <input type="text" class="form-control" name="warranty"  placeholder="Enter Warranty" required>
+                    <input type="text" class="form-control" name="warranty"  placeholder="Enter number" required>
                 </div>
             </div>
         </div>
@@ -73,13 +73,13 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Price:</label>
-                    <input type="text" class="form-control" name="price"  placeholder="Enter Battery" required>
+                    <input type="text" class="form-control" name="price"  placeholder="Enter price" required>
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Storage:</label>
-                    <input type="text" class="form-control" name="storage"  placeholder="Enter Warranty" required>
+                    <input type="text" class="form-control" name="storage"  placeholder="Enter number" required>
                 </div>
             </div>
         </div>

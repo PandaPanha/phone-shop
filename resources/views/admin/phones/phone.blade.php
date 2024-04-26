@@ -27,11 +27,8 @@
       <tr class="text-center">
         <td>{{$product->id}}</td>
         <td>{{$product->product_code}}</td>
-        <td >
-          {{$product->product_name}}
-        </td>
-        <td >
-          ${{$product->price}}
+        <td >{{$product->product_name}}</td>
+        <td >${{$product->price}}
         </td>
         <td>
           @foreach ($product_imgs as $img)
