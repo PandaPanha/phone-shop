@@ -31,8 +31,8 @@ class ProductRequest extends FormRequest
             'camera'       => 'required|string',
             'battery'      => 'required|string',
             'warranty'     => 'required|numeric',
-            'price'        => 'required|numeric'
-
+            'price'        => 'required|numeric',
+            'product_img' => 'required|image'
         ];
     }
 }

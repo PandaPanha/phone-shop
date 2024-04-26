@@ -17,12 +17,18 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Product Code:</label>
-                    <input type="text" class="form-control" name="product_code"  placeholder="code " required>
+                    @error('product_code')
+                        <div class="error">{{ $message }}</div>
+                    @enderror                    
+                    <input type="text" class="form-control" name="product_code"  placeholder="code " >
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Product Name:</label>
+                    @error('product_name')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="text" class="form-control" name="product_name"  placeholder="Name phone" required>
                 </div>
             </div>
@@ -31,12 +37,18 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Display:</label>
+                    @error('display')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="text" class="form-control" name="display"  placeholder="Enter Display" required>
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Ram:</label>
+                    @error('ram')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="text" class="form-control" name="ram"  placeholder="number" required>
                 </div>
             </div>
@@ -45,12 +57,18 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Processor:</label>
+                    @error('processor')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="text" class="form-control" name="processor"  placeholder="Enter Processor" required>
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Camera:</label>
+                    @error('camera')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="text" class="form-control" name="camera"  placeholder="Enter Camera" required>
                 </div>
             </div>
@@ -59,12 +77,18 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Battery:</label>
+                    @error('battery')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="text" class="form-control" name="battery"  placeholder="Enter Battery" required>
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Warranty:</label>
+                    @error('warranty')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="text" class="form-control" name="warranty"  placeholder="Enter number" required>
                 </div>
             </div>
@@ -73,12 +97,18 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Price:</label>
+                    @error('price')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="text" class="form-control" name="price"  placeholder="Enter price" required>
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Storage:</label>
+                    @error('storage')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="text" class="form-control" name="storage"  placeholder="Enter number" required>
                 </div>
             </div>
@@ -87,12 +117,18 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Image:</label>
+                    @error('product_img')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="file" class="form-control" name="product_img"required>
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Color name:</label>
+                    @error('color_name')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
                     <input type="text" class="form-control" name="color_name"required>
                 </div>
             </div>
@@ -104,5 +140,9 @@
     </form>
   </div>
 </div>
-
+<style>
+        .error{
+        color: red;
+    }
+</style>
 @endsection()
