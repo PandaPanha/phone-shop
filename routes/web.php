@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+    Route::get('/admin/dashboard/dashboard.',[DashboardController::class,'dashboard'])->name('dashboard');
     //admin routes Product
     Route::get('/admin/phone',[PhoneController::class,'list'])->name('list.phone');
     Route::get('/admin/phone/create',[PhoneController::class,'create'])->name('create.phone');
@@ -81,6 +81,14 @@ Route::get('/admin/about', function(){
 
 Route::get('/about', function(){
     return view('Frontend.about.index');
+});
+
+Route::get('/contact', function(){
+    return view('Frontend.contact.contact');
+});
+
+Route::get('/admin/about', function(){
+    return view('about.about');
 });
 
 // Route::get('/admin/dashboard', function(){

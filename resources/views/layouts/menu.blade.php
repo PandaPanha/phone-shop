@@ -120,8 +120,6 @@
                 </ul>
             </div>
 
-        </nav>
-    </div>
     @yield('content')
     @extends('layouts.footer')
 

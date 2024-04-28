@@ -18,7 +18,7 @@ class PhoneController extends Controller
 
     public function showDetail($id){
         $product = Product::where('id', $id)->first();
-        $productImg = ProductImage::where('product_id', $product->id)->first();
+        $productImg = ProductImage::where('product_id', $product->id)->first(); 
         return view('Frontend.product.product_detail', ['product' => $product, 'productImg' => $productImg]);
     }
 
@@ -52,6 +52,7 @@ class PhoneController extends Controller
             'product_id' => $p->id, //take id from Product
         ]);
 
+        
 
 
         return redirect()->route('list.phone');

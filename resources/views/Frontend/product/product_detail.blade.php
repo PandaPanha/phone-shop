@@ -1,6 +1,13 @@
 @extends('layouts.menu')
 @section('content')
-
+{{-- <nav class="navbar bg-body-tertiary  ">
+    <div class="container-fluid">
+      <span class="text-secondary navbar-brand mb-0 h1 rounded-2 ">
+        <a href="/home" class="btn border-0 active" role="button" aria-pressed="true">Phone</a>
+        <a href="{{ route('home.productDetail', ['id'=>$product->id])}}"  class="btn border-0 active" role="button" aria-pressed="true">-> Phone Detail</a>
+      </span>
+    </div>
+</nav> --}}
 <div class="container p-2 bg-light">
     <div class="row">
         <div class="col-sm-6 p-4 bg-white text-center">
@@ -8,12 +15,12 @@
                 <img src="{{ '/assets/' . $productImg->product_img }}" alt="" width="320px" height="300px">
             </div>
             <hr class="text-warning font-weight-bold">
-            <div class="justify-content-center m-auto">
+            {{-- <div class="justify-content-center m-auto">
                 <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
                 <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
                 <a href=""><img src="/assets/iphone-1.jpg" class="border shadow-sm p-1" width="70px" height="70px"  alt=""></a>
             </div>
-            <br>
+            <br> --}}
             <hr>
             <div id="carouselExampleIndicators" class="carousel slide text-center w-100 h-100" data-bs-ride="carousel">
                 <div class="carousel-indicators">
