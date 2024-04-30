@@ -1,63 +1,6 @@
 @extends('layouts.menu')
-<style>
-    body {
-        padding: 0;
-        margin: 0;
-    }
-
-    .container {
-        width: 80%;
-        overflow: hidden;
-        background-origin: pink;
-        margin: auto;
-    }
-
-    .container .item {
-        width: 23%;
-        height: 300px;
-        float: left;
-        /* background-color: blue; */
-        margin: 10px 1%;
-    }
-
-    .item .pic {
-        width: 100%;
-        height: 70%;
-        background-color: black;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-
-    .item .pic img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-
-    .item .description {
-        width: 100%;
-        height: 30%;
-        background-color: rgb(192, 233, 245);
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-
-    .description h3 {
-        font-size: 20px;
-        /* text-align: center; */
-        margin-top: 0px;
-        font-family: 'Courier New', Courier, monospace;
-    }
-</style>
 @section('content')
-    <?php
-    $product = [['img' => 'assets/1.jpg', 'dis' => '50%', 'des' => ' This is Product', 'price' => ' 24$'], ['img' => 'assets/bglogin1.avif', 'dis' => '50%', 'des' => ' This is Product', 'price' => ' 24$'], ['img' => 'assets/1.jpg', 'dis' => '50%', 'des' => ' This is Product', 'price' => ' 24$'], ['img' => 'assets/1.jpg', 'dis' => '50%', 'des' => ' This is Product', 'price' => ' 24$'], ['img' => 'assets/1.jpg', 'dis' => '50%', 'des' => ' This is Product', 'price' => ' 24$'], ['img' => 'assets/1.jpg', 'dis' => '50%', 'des' => ' This is Product', 'price' => ' 24$'], ['img' => 'assets/1.jpg', 'dis' => '50%', 'des' => ' This is Product', 'price' => ' 24$'], ['img' => 'assets/1.jpg', 'dis' => '50%', 'des' => ' This is Product', 'price' => ' 24$']];
-    ?>
-    <div class="container">
-
-    </div>
+<div class="container">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -90,10 +33,11 @@
         </button>
     </div>
 
+
     <div class="m-4">
         <h3  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Smart Phone</h3>
         <hr>
-        <div class="item p-2 d-flex  row row-cols-5 justify-content-center flex-wrap">
+        <div class="item p-2 d-flex row row-cols-3 justify-content-center  align-content-center flex-wrap">
             @foreach ($products as $item)
                 <a href="{{ route('home.productDetail', ['id' => $item->id]) }}" class=" text-decoration-none m-3 p-3">
                     <div class="card p-4 ">
@@ -114,4 +58,5 @@
         </div>
     </div>
     <br><br>
+</div>
 @endsection
