@@ -1,6 +1,6 @@
 @extends('layouts.menu')
 @section('content')
-<div class="container">
+<div class="">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -37,20 +37,22 @@
     <div class="m-4">
         <h3  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Smart Phone</h3>
         <hr>
-        <div class="item p-2 d-flex row row-cols-3 justify-content-center  align-content-center flex-wrap">
+        <div class="item row row-cols-4 w-auto  justify-content-center align-content-center flex-wrap pb-5 ">
             @foreach ($products as $item)
-                <a href="{{ route('home.productDetail', ['id' => $item->id]) }}" class=" text-decoration-none m-3 p-3">
-                    <div class="card p-4 ">
-                        @foreach ($product_imgs as $img)
+                <a href="{{ route('home.productDetail', ['id' => $item->id]) }}" class=" text-decoration-none">
+                    <div class="card">
+                        <div class="d-flex flex-column flex-grow-0   justify-content-center align-content-center ">
+                            @foreach ($product_imgs as $img)
                             @if ($item->id == $img->product_id)
                                 <img src="{{ '/assets/' . $img->product_img }}" alt="" width="200px"
                                     height="200px">
                             @endif
-                        @endforeach
-                        <div class="card-body">
-                            <hr>
-                            <h4 class="card-text">{{ $item->product_name }}</h4>
-                            <h5 class="card-title text-warning"><strong>$ {{ $item->price }}</strong></h5>
+                            @endforeach
+                            <div class="card-body">
+                                <hr>
+                                <h4 class="card-text">{{ $item->product_name }}</h4>
+                                <h5 class="card-title text-warning"><strong>$ {{ $item->price }}</strong></h5>
+                            </div>
                         </div>
                     </div>
                 </a>
