@@ -33,10 +33,27 @@ class OrderController extends Controller
         $order = new Order;
         $order->email = $request->get('email');
         $order->phone = $request->get('phone');
+        $order->name = $request->get('name');
+        $order->address = $request->get('address');
         $order->product_id = $productId;
         $order->save();
 
-        return redirect()->route('home.productDetail',['id' => $productId]);
+        if ($order) {
+            $botToken = "6436238382:AAH_5NzhUHECqlVXB1asNIn0GGx16AhwEK0";
+            $chat_id = "-1002117527137";
+            $message = "Information Customer Order:\nCustomer Name: ".$order->name."\nCustomer Phone: ".$order->phone."\nCustomer Address: ".$order->address."\nProduct Code: ".$order->product_id;
+            $bot_url = "https://api.telegram.org/bot$botToken/";
+            $url = $bot_url . "sendMessage?chat_id=" . $chat_id . "&text=" . urlencode($message);
+            file_get_contents($url);
+        } else {
+            echo "
+                <script>
+                    alert('Something Went Wrong!');
+                </script>
+            ";
+        }
+
+        return redirect()->route('home.productDetail',['id' => $productId])->with('success', 'You order successfully!, <br> Please wait');
     }
 
     /**

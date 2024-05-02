@@ -19,7 +19,7 @@ class Product extends Model
         'camera',
         'warranty',
         'price',
-        
+
     ];
     public function product_image(){
         return $this->hasMany(ProductImage::class);

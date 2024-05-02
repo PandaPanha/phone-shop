@@ -1,7 +1,7 @@
-@extends('layouts.adminLayout')
+@extends('layouts.menu')
 @section('content')
-<div class="row">
-    <div class="col-sm-6">
+<div class="row p-4">
+    <div class="col-sm-6 p-3">
         <p>
             Welcome to SHOP, your friendly neighborhood destination for the latest in mobile phones and laptops! We're your one-stop-shop for all your tech needs, offering a curated selection of top-quality devices at affordable prices.
 Discover a diverse range of smartphones, from budget-friendly options to flagship models, catering to every preference and budget. Whether you're a photography enthusiast, a gaming fanatic, or a productivity powerhouse, we have the perfect phone to complement your lifestyle.
@@ -31,8 +31,9 @@ Join our community of satisfied customers and elevate your tech game with SHOP. 
             </div>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 p-3">
         <img src="https://c8.alamy.com/comp/2RNP39X/o2-mobile-phone-store-the-bridges-shopping-centre-city-centre-sunderland-tyne-and-wear-england-united-kingdom-2RNP39X.jpg" width="100%" alt="">
     </div>
 </div>
-@endsection()
+@endsection
+

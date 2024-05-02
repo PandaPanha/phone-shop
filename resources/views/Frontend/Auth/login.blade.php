@@ -16,15 +16,15 @@
     .bg{
         background-image: url('/assets/screenlogin.jpg');
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 80%;
         background-position: center;
     }
     .height{
         height: 100vh;
     }
     .color{
-        background-color: #f0ffff;
-        padding: 10%;
+        background-color: #ffffff;
+        padding: 9%;
         border-radius: 15px;
         font-size: 20px;
     }
@@ -33,6 +33,10 @@
         height: 100%;
         object-fit: contain;
     }
+    .card-with-shadow {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+}
+
 </style>
 <body>
 
@@ -45,29 +49,38 @@
             <form action="{{route('loginA')}}" method="POST">
                 @csrf
                 <div class="title">
-                    <h4 class="text-center text-dark p-3 mt-4 color">Login to Shop</h4>
+                    <h4  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #8796a5; font-weight: bold;font-size: 28px;">
+                        Login to Shop
+                    </h4>
+                    
                     <div class="text-center  m-b-20 ">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <label for="email" class="text-grey mt-5">Email or Phone Number</label>
-                        <input class="form-control" type="text" name="email" id="email" autofocus>
+                        <label for="email" class="mt-5" style="color: #8796a5; font-size: 16px;">Email or Phone Number</label>
+                        <div class="card-with-shadow">
+                            <input class="form-control border-0" type="text" name="email" id="email" placeholder="Enter your email or number phone" autofocus>
+                        </div>
+                        
+                        
                     </div>
                 </div>
                 <div class="form-group password">
-                    <div class="col-xs-12">
-                        <label for="password"  class="text-grey mt-5">Password</label>
-                        <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="password">
+                    <div class="col-xs-12 ">
+                        <label for="password" style="color: #8796a5; font-size: 16px;" class=" mt-5">Password</label>
+                        <div class="card-with-shadow">
+                            <input type="password"  class="form-control border-0{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="password" placeholder="Enter password">
+                        </div>
                     </div>
                 </div>
                 <div class="form-group text-center p-b-10" style="margin-bottom: 10px">
                    <div class="row color">
                     <div class="col-xs-6">
-                        <button type="submit" class="btn btn-info mt-5 w-100">Login</button>
+                        <button type="submit" class="btn mt-2 w-100" style="background-color: #8796a5; padding: 11%; color: #ffffff">Login</button>
                     </div>
                     <div class="col-xs-6">
-                        <button type="submit" class="btn btn-info mt-5">Forgot Password</button>
+                        <a href="{{ url('/') }}" type="btn" class="btn mt-2" style="background-color: #ffffff; padding: 11%; color: #8796a5">Home</a>
                     </div>
                    </div>
                 </div>

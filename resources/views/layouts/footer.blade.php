@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<style>
+{{-- <style>
     *{
         padding: 0;
         margin: 0;
@@ -99,17 +99,17 @@
     li a:hover {
         color: #78c4c7;
     }
-</style>
+</style> --}}
 <body>
-    <footer>
-        <div class="footerContainer">
+    <footer class="fixed-bottom">
+        <div class="footerContainer d-flex justify-content-end">
             <div class="socialIcons">
                 <a href=""><i class="fa-brands fa-facebook"></i></a>
                 <a href=""><i class="fa-brands fa-instagram"></i></a>
                 <a href=""><i class="fa-brands fa-twitter"></i></a>
                 <a href=""><i class="fa-brands fa-google-plus"></i></a>
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
-            </div>       
+            </div>
         </div>
     </footer>
 </body>

@@ -17,13 +17,19 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Product Code:</label>
-                    <input type="text" class="form-control" name="product_code"  placeholder="126" required>
+                    @error('product_code')
+                        <div class="error">{{ $message }}</div>
+                    @enderror                    
+                    <input type="text" class="form-control" name="product_code"  placeholder="code " required value="{{old('product_code')}}" >
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Product Name:</label>
-                    <input type="text" class="form-control" name="product_name"  placeholder="Iphone16" required>
+                    @error('product_name')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="text" class="form-control" name="product_name"  placeholder="Name phone" required value="{{old('product_name')}}">
                 </div>
             </div>
         </div>
@@ -31,71 +37,101 @@
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Display:</label>
-                    <input type="text" class="form-control" name="display"  placeholder="Enter Battery" required>
+                    @error('display')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="text" class="form-control" name="display"  placeholder="Enter Display" required value="{{old('display')}}">
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Ram:</label>
-                    <input type="text" class="form-control" name="ram"  placeholder="Enter Warranty" required>
+                    @error('ram')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="text" class="form-control" name="ram"  placeholder="number" required value="{{old('ram')}}">
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Processor:</label>
-                    <input type="text" class="form-control" name="processor"  placeholder="Enter Battery" required>
+                    @error('processor')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="text" class="form-control" name="processor"  placeholder="Enter Processor" required value="{{old('processor')}}">
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Camera:</label>
-                    <input type="text" class="form-control" name="camera"  placeholder="Enter Warranty" required>
+                    @error('camera')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="text" class="form-control" name="camera"  placeholder="Enter Camera" required value="{{old('camera')}}">
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Battery:</label>
-                    <input type="text" class="form-control" name="battery"  placeholder="Enter Battery" required>
+                    @error('battery')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="text" class="form-control" name="battery"  placeholder="Enter Battery" required value="{{old('battery')}}">
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Warranty:</label>
-                    <input type="text" class="form-control" name="warranty"  placeholder="Enter Warranty" required>
+                    @error('warranty')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="text" class="form-control" name="warranty"  placeholder="Enter number" required value="{{old('warranty')}}">
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Price:</label>
-                    <input type="text" class="form-control" name="price"  placeholder="Enter Battery" required>
+                    @error('price')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="text" class="form-control" name="price"  placeholder="Enter price" required value="{{old('price')}}">
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Storage:</label>
-                    <input type="text" class="form-control" name="storage"  placeholder="Enter Warranty" required>
+                    @error('storage')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="text" class="form-control" name="storage"  placeholder="Enter number" required value="{{old('storage')}}">
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Image:</label>
-                    <input type="file" class="form-control" name="product_img"required>
+                   {{--  @error('product_img')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="file" class="form-control" name="product_img">
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
                 <div class="form-group">
                     <label for="">Color name:</label>
-                    <input type="text" class="form-control" name="color_name"required>
+                    @error('color_name')
+                        <div class="error">{{ $message }}</div>
+                    @enderror 
+                    <input type="text" class="form-control" name="color_name" required>
                 </div>
-            </div> 
+            </div>
         </div>
 
         <br>
@@ -104,5 +140,9 @@
     </form>
   </div>
 </div>
-
+<style>
+        .error{
+        color: red;
+    }
+</style>
 @endsection()

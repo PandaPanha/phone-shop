@@ -15,11 +15,17 @@ class PhoneController extends Controller
         $product_imgs = ProductImage::all();
         return view('admin.phones.phone',['products' => $products, 'product_imgs' => $product_imgs]);
     }
- 
+
     public function showDetail($id){
         $product = Product::where('id', $id)->first();
-        $productImg = ProductImage::where('product_id', $product->id)->first();
+        $productImg = ProductImage::where('product_id', $product->id)->first(); 
         return view('Frontend.product.product_detail', ['product' => $product, 'productImg' => $productImg]);
+    }
+
+    public function OrderStore($id){
+        $product = Product::where('id', $id)->first();
+        $productImg = ProductImage::where('product_id', $product->id)->first();
+        return view('Frontend.product.form_order', ['product' => $product, 'productImg' => $productImg]);
     }
 
     public function create(){
@@ -27,7 +33,7 @@ class PhoneController extends Controller
         return view('admin.phones.components.add_phone');
     }
 
-    public function store(Request $request){
+    public function store(ProductRequest $request){
         $p = Product::create([
             'product_code'  => $request->get('product_code'),
             'product_name'  => $request->get('product_name'),
@@ -43,13 +49,14 @@ class PhoneController extends Controller
         ProductImage::create([
             'product_img' => $request->get('product_img'),
             'color_name' => $request->get('color_name'),
-            'product_id' => $p->id,
+            'product_id' => $p->id, //take id from Product
         ]);
 
         
 
+
         return redirect()->route('list.phone');
-        
+
     }
 
     public function storeImage($request){

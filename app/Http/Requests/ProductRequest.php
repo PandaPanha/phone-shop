@@ -11,7 +11,7 @@ class ProductRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,17 +22,16 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'product_code' => 'required',
-            'product_name' => 'required',
-            'storage'      => 'required',
-            'display'      => 'required',
-            'ram'          => 'required',
-            'processor'    => 'required',
-            'camera'       => 'required',
-            'battery'      => 'required',
-            'warranty'     => 'required',
-            'price'        => 'required'
-
+            'product_code' => 'required|string|unique:products',
+            'product_name' => 'required|string',
+            'storage'      => 'required|numeric',
+            'display'      => 'required|string',
+            'ram'          => 'required|numeric',
+            'processor'    => 'required|string',
+            'camera'       => 'required|string',
+            'battery'      => 'required|string',
+            'warranty'     => 'required|numeric',
+            'price'        => 'required|numeric',
         ];
     }
 }

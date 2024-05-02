@@ -13,7 +13,7 @@ class HomeController extends Controller
         $products= Product::all();
         $product_imgs = ProductImage::all();
         return view('Frontend.home',['products' => $products, 'product_imgs' => $product_imgs]);
-        
+
     }
 
     public function home(){
@@ -21,7 +21,14 @@ class HomeController extends Controller
         $products = Product::all();
         return view('Frontend.home',compact('products'));
     }
-    
+
+    public function productList(){
+        $products = Product::all();
+        $product_imgs = ProductImage::all();
+        return view('Frontend.product.productlist', ['products' => $products, 'product_imgs' => $product_imgs]);
+    }
+
+
     public function menu(){
         return view('layouts.menu');
     }

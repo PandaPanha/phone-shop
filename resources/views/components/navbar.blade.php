@@ -29,12 +29,12 @@
                   [
                   "title" => "Employee",
                   "src" => "/assets/employee.png",
-                  "path" => "#"
+                  "path" => "/admin/employee/employeelist"
                   ],
                   [
                   "title" => "About",
                   "src" => "/assets/info.png",
-                  "path" => "/about"
+                  "path" => "/admin/about"
                   ],
                   [
                   "title" => "Setting",
