@@ -10,7 +10,7 @@
     </div>
   </nav>
   <div class="container-fluid bg-light p-4">
-    <form action="{{route('store.phone')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('store.phone')}}" method="POST">
         @csrf
         <br>
         <div class="row">
@@ -120,7 +120,7 @@
                     @error('product_img')
                         <div class="error">{{ $message }}</div>
                     @enderror 
-                    <input type="file" class="form-control" name="product_img" required>
+                    <input type="file" class="form-control" name="product_img">
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
