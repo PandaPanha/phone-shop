@@ -32,7 +32,6 @@ class ProductRequest extends FormRequest
             'battery'      => 'required|string',
             'warranty'     => 'required|numeric',
             'price'        => 'required|numeric',
-            // 'product_img'  => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ];
     }
 }
